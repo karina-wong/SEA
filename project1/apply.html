@@ -35,17 +35,41 @@
                 <label for="dob">Date of Birth</label> 
                 <input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10"/>
             </p>
+            <fieldset>
             <legend>Gender</legend>
+                <p>
+                    <label for="male">Male</label> 
+                    <input type="radio" id="male" name="male" value="male" >
+                    <label for="female">Female</label> 
+                    <input type="radio" id="female" name="female" value="female"/>
+                    <label for="non-binary">Non-binary</label> 
+                    <input type="radio" id="non-binary" name="non-binary" value="non-binary"/>
+                    <label for="unspecified">Prefer not to say</label> 
+                    <input type="radio" id="unspecifiedy" name="unspecified" value="unspecified"/>
+                </p>
+            </fieldset>
             <p>
-                <label for="male">Male</label> 
-                <input type="radio" id="male" name="male" value="male" >
-                <label for="female">Female</label> 
-                <input type="radio" id="female" name="female" value="female"/>
-                <label for="non-binary">Non-binary</label> 
-                <input type="radio" id="non-binary" name="non-binary" value="non-binary"/>
-                <label for="unspecified">Prefer not to say</label> 
-                <input type="radio" id="unspecifiedy" name="unspecified" value="unspecified"/>
+                <label for="street_address">Street Address: </label> 
+                <input type="text" name= "street_address" id="street_address" maxlength="40"/>
             </p>
+            <p>
+                <label for="suburb">Suburb/ town: </label> 
+                <input type="text" name= "suburb" id="suburb" maxlength="40" />
+            </p>
+            <p>
+                <label for=state>State: </label> 
+                <select name="state" id="state">
+                    <option value="VIC">VIC</option>			
+                    <option value="NSW">NSW</option>	
+                    <option value="QLD">QLD</option>
+                    <option value="WA">WA</option>			
+                    <option value="SA">SA</option>	
+                    <option value="NT">NT</option>
+                    <option value="TAS">TAS</option>	
+                    <option value="ACT">ACT</option>
+                </select>
+            </p>
+            
             <input type= "submit" value="Register"/>
             <input type= "reset" value="Reset Form"/>
         </form>
