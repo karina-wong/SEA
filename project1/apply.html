@@ -28,12 +28,13 @@
                 <label for="first_name">First name: </label> 
                 <input type="text" name= "first_name" id="first_name" maxlength="20" required="required"/>
             </p>
+            <!-- configure to meet format for names-->
             <p>
                 <label for="last_name">Last name: </label> 
                 <input type="text" name= "last_name" id="last_name" maxlength="20" required="required"/>
             </p>
             <p>
-                <label for="dob">Date of Birth</label> 
+                <label for="dob">Date of Birth: </label> 
                 <input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10"/>
             </p>
             <fieldset>
@@ -72,13 +73,36 @@
                 </select>
             </p>
             <p>
-                <label for="postcode">Postcode</label> 
+                <label for="postcode">Postcode: </label> 
                 <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="\d{7,10}" />
             </p>
-            <p><label for="email">Email</label> 
+            <p><label for="email">Email: </label> 
               <input type="email" name= "email" id="email" required="required"/>
             </p>
-            
+            <!-- configure to meet format for phone-->
+            <p>
+                <label for="phone">Phone Number: </label> 
+                <input type="number" name= "phone" id="phone" maxlength="12" pattern="\d{7,10}" />
+            </p>
+            <fieldset>
+                <legend>Required Technical List</legend>
+                <p>Select which skills you have</p>
+                <p><label for="skill1">Skill 1</label> 
+                    <input type="checkbox" id="skill1" name="tskills[]" value="skill1" checked="checked"/>
+                </p>
+                <p><label for="skill2">Skill 2</label> 
+                    <input type="checkbox" id="skill2" name="tskills[]" value="skill2"/>
+                </p>
+                <p><label for="skill3">Skill 3</label> 
+                    <input type="checkbox" id="skill3" name="tskills[]" value="skill3"/>
+                </p>
+            </fieldset>
+            </fieldset>
+                <p>
+                    <label for="otherskills">Other Skills</label>
+                    <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea>
+                </p>
+	        </fieldset>
             <input type= "submit" value="Register"/>
             <input type= "reset" value="Reset Form"/>
         </form>
