@@ -18,6 +18,7 @@
             <p>
                 <label for="reference_number">Reference Number: </label> 
                 <select name="reference_number" id="reference_number">
+                    <option value="">Please Select</option>	
                     <option value="job1">Job 1 ref no.</option>			
                     <option value="job2">Job 2 ref no.</option>	
                     <option value="other">Other</option>
@@ -59,6 +60,7 @@
             <p>
                 <label for=state>State: </label> 
                 <select name="state" id="state">
+                    <option value="select">Please Select</option>		
                     <option value="VIC">VIC</option>			
                     <option value="NSW">NSW</option>	
                     <option value="QLD">QLD</option>
@@ -68,6 +70,13 @@
                     <option value="TAS">TAS</option>	
                     <option value="ACT">ACT</option>
                 </select>
+            </p>
+            <p>
+                <label for="postcode">Postcode</label> 
+                <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="\d{7,10}" />
+            </p>
+            <p><label for="email">Email</label> 
+              <input type="email" name= "email" id="email" required="required"/>
             </p>
             
             <input type= "submit" value="Register"/>
