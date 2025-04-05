@@ -8,12 +8,8 @@
         <meta name="author" content="Nathan Nguyen">
         <title>SEA application page</title>
     </head>
-    <header>
-
-
-        
-    </header>
     <body>
+        
         <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
             <p>
                 <label for="reference_number">Reference Number: </label> 
@@ -26,16 +22,15 @@
             </p>
             <p>
                 <label for="first_name">First name: </label> 
-                <input type="text" name= "first_name" id="first_name" maxlength="20" required="required"/>
+                <input type="text" name= "first_name" id="first_name" maxlength="20" pattern="[A-Za-z]+" required="required"/>
             </p>
-            <!-- configure to meet format for names-->
             <p>
                 <label for="last_name">Last name: </label> 
-                <input type="text" name= "last_name" id="last_name" maxlength="20" required="required"/>
+                <input type="text" name= "last_name" id="last_name" maxlength="20" pattern="[A-Za-z]+" required="required"/>
             </p>
             <p>
                 <label for="dob">Date of Birth: </label> 
-                <input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10"/>
+                <input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10" required="required"/>
             </p>
             <fieldset>
             <legend>Gender</legend>
@@ -52,11 +47,11 @@
             </fieldset>
             <p>
                 <label for="street_address">Street Address: </label> 
-                <input type="text" name= "street_address" id="street_address" maxlength="40"/>
+                <input type="text" name= "street_address" id="street_address" maxlength="40" required="required"/>
             </p>
             <p>
                 <label for="suburb">Suburb/ town: </label> 
-                <input type="text" name= "suburb" id="suburb" maxlength="40" />
+                <input type="text" name= "suburb" id="suburb" maxlength="40" required="required"/>
             </p>
             <p>
                 <label for=state>State: </label> 
@@ -74,15 +69,14 @@
             </p>
             <p>
                 <label for="postcode">Postcode: </label> 
-                <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="\d{7,10}" />
+                <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="^\d+$" required="required"/>
             </p>
             <p><label for="email">Email: </label> 
               <input type="email" name= "email" id="email" required="required"/>
             </p>
-            <!-- configure to meet format for phone-->
             <p>
                 <label for="phone">Phone Number: </label> 
-                <input type="number" name= "phone" id="phone" maxlength="12" pattern="\d{7,10}" />
+                <input type="number" name= "phone" id="phone" minlength="8"  maxlength="12" pattern="^\d+$" required="required"/>
             </p>
             <fieldset>
                 <legend>Required Technical List</legend>
