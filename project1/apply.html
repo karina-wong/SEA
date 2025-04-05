@@ -9,14 +9,14 @@
         <title>SEA application page</title>
     </head>
     <body>
-        
+
         <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
             <p>
                 <label for="reference_number">Reference Number: </label> 
                 <select name="reference_number" id="reference_number">
                     <option value="">Please Select</option>	
-                    <option value="job1">Job 1 ref no.</option>			
-                    <option value="job2">Job 2 ref no.</option>	
+                    <option value="job1">Data analyst - DA672</option>			
+                    <option value="job2">Software dev - SD516</option>	
                     <option value="other">Other</option>
                 </select>
             </p>
@@ -69,20 +69,20 @@
             </p>
             <p>
                 <label for="postcode">Postcode: </label> 
-                <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="^\d+$" required="required"/>
+                <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="^\d" required="required"/>
             </p>
             <p><label for="email">Email: </label> 
               <input type="email" name= "email" id="email" required="required"/>
             </p>
             <p>
                 <label for="phone">Phone Number: </label> 
-                <input type="number" name= "phone" id="phone" minlength="8"  maxlength="12" pattern="^\d+$" required="required"/>
+                <input type="number" name= "phone" id="phone" minlength="8"  maxlength="12" pattern="^\d+" required="required"/>
             </p>
             <fieldset>
                 <legend>Required Technical List</legend>
                 <p>Select which skills you have</p>
                 <p><label for="skill1">Skill 1</label> 
-                    <input type="checkbox" id="skill1" name="tskills[]" value="skill1" checked="checked"/>
+                    <input type="checkbox" id="skill1" name="tskills[]" value="skill1" />
                 </p>
                 <p><label for="skill2">Skill 2</label> 
                     <input type="checkbox" id="skill2" name="tskills[]" value="skill2"/>
@@ -97,7 +97,7 @@
                     <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea>
                 </p>
 	        </fieldset>
-            <input type= "submit" value="Register"/>
+            <input type= "submit" value="Apply"/>
             <input type= "reset" value="Reset Form"/>
         </form>
 
