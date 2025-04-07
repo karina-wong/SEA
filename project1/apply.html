@@ -81,14 +81,14 @@
                 </p>
                 <p>
                     <label for="postcode">Postcode: </label> 
-                    <input type="text" name= "postcode" id="postcode" maxlength="4" pattern="^\d" required="required">
+                    <input type="text" name= "postcode" id="postcode" maxlength="4" pattern="[0-9]{4}" required="required">
                 </p>
                 <p><label for="email">Email: </label> 
-                <input type="email" name= "email" id="email" required="required">
+                <input type="text" name= "email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="required">
                 </p>
                 <p>
                     <label for="phone">Phone Number: </label> 
-                    <input type="text" name= "phone" id="phone" minlength="8"  maxlength="12" pattern="^\d+" required="required">
+                    <input type="text" name= "phone" id="phone" pattern="[0-9]{8-12}" required="required">
                 </p>
                 <fieldset>
                     <legend>Required Technical List</legend>
