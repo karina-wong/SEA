@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="description" content="Application page for jobs at SEA">
@@ -34,36 +34,36 @@
                 </p>
                 <p>
                     <label for="first_name">First name: </label> 
-                    <input type="text" name= "first_name" id="first_name" maxlength="20" pattern="[A-Za-z]+" required="required"/>
+                    <input type="text" name= "first_name" id="first_name" maxlength="20" pattern="[A-Za-z]+" required="required">
                 </p>
                 <p>
                     <label for="last_name">Last name: </label> 
-                    <input type="text" name= "last_name" id="last_name" maxlength="20" pattern="[A-Za-z]+" required="required"/>
+                    <input type="text" name= "last_name" id="last_name" maxlength="20" pattern="[A-Za-z]+" required="required">
                 </p>
                 <p>
                     <label for="dob">Date of Birth: </label> 
-                    <input type="date" name= "dob" id="dob" placeholder="dd-mm-yyyy" maxlength="10" size="10" required="required"/>
+                    <input type="date" name= "dob" id="dob"  size="10" required="required">
                 </p>
                 <fieldset>
                 <legend>Gender</legend>
                     <p>
                         <label for="male">Male</label> 
-                        <input type="radio" id="male" name="male" value="male" >
+                        <input type="radio" id="male" name="male" value="male">
                         <label for="female">Female</label> 
-                        <input type="radio" id="female" name="female" value="female"/>
+                        <input type="radio" id="female" name="female" value="female">
                         <label for="non-binary">Non-binary</label> 
-                        <input type="radio" id="non-binary" name="non-binary" value="non-binary"/>
+                        <input type="radio" id="non-binary" name="non-binary" value="non-binary">
                         <label for="unspecified">Prefer not to say</label> 
-                        <input type="radio" id="unspecifiedy" name="unspecified" value="unspecified"/>
+                        <input type="radio" id="unspecified" name="unspecified" value="unspecified">
                     </p>
                 </fieldset>
                 <p>
                     <label for="street_address">Street Address: </label> 
-                    <input type="text" name= "street_address" id="street_address" maxlength="40" required="required"/>
+                    <input type="text" name= "street_address" id="street_address" maxlength="40" required="required">
                 </p>
                 <p>
                     <label for="suburb">Suburb/ town: </label> 
-                    <input type="text" name= "suburb" id="suburb" maxlength="40" required="required"/>
+                    <input type="text" name= "suburb" id="suburb" maxlength="40" required="required">
                 </p>
                 <p>
                     <label for=state>State: </label> 
@@ -81,36 +81,36 @@
                 </p>
                 <p>
                     <label for="postcode">Postcode: </label> 
-                    <input type="number" name= "postcode" id="postcode" maxlength="4" pattern="^\d" required="required"/>
+                    <input type="text" name= "postcode" id="postcode" maxlength="4" pattern="^\d" required="required">
                 </p>
                 <p><label for="email">Email: </label> 
-                <input type="email" name= "email" id="email" required="required"/>
+                <input type="email" name= "email" id="email" required="required">
                 </p>
                 <p>
                     <label for="phone">Phone Number: </label> 
-                    <input type="number" name= "phone" id="phone" minlength="8"  maxlength="12" pattern="^\d+" required="required"/>
+                    <input type="text" name= "phone" id="phone" minlength="8"  maxlength="12" pattern="^\d+" required="required">
                 </p>
                 <fieldset>
                     <legend>Required Technical List</legend>
                     <p>Select which skills you have</p>
                     <p><label for="skill1">Skill 1</label> 
-                        <input type="checkbox" id="skill1" name="tskills[]" value="skill1" />
+                        <input type="checkbox" id="skill1" name="tskills[]" value="skill1">
                     </p>
                     <p><label for="skill2">Skill 2</label> 
-                        <input type="checkbox" id="skill2" name="tskills[]" value="skill2"/>
+                        <input type="checkbox" id="skill2" name="tskills[]" value="skill2">
                     </p>
                     <p><label for="skill3">Skill 3</label> 
-                        <input type="checkbox" id="skill3" name="tskills[]" value="skill3"/>
+                        <input type="checkbox" id="skill3" name="tskills[]" value="skill3">
                     </p>
                 </fieldset>
-                </fieldset>
+                <fieldset>
                     <p>
                         <label for="otherskills">Other Skills</label>
                         <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea>
                     </p>
                 </fieldset>
-                <input type= "submit" value="Apply"/>
-                <input type= "reset" value="Reset Form"/>
+                <input type= "submit" value="Apply">
+                <input type= "reset" value="Reset Form">
             </form>
         </main>
         <footer>
@@ -123,8 +123,4 @@
         </footer>   
 
     </body>
-
-
-
-
 </html>
