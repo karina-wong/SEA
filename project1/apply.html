@@ -91,17 +91,25 @@
                     <input type="text" name= "phone" id="phone"  pattern="[0-9]{8,12}" required="required">
                 </p>
                 <fieldset>
-                    <legend>Required Technical List</legend>
-                    <p><label for="skill1">Skill 1</label> 
-                        <input type="checkbox" id="skill1" name="tskills[]" value="skill1">
-                    </p>
-                    <p><label for="skill2">Skill 2</label> 
-                        <input type="checkbox" id="skill2" name="tskills[]" value="skill2">
-                    </p>
-                    <p><label for="skill3">Skill 3</label> 
-                        <input type="checkbox" id="skill3" name="tskills[]" value="skill3">
-                    </p>
-                </fieldset>
+                    <legend>Required Technical Skills</legend>
+                  
+                    <!-- Analyst Skills -->
+                    <div id="analyst-skills" style="display: none;">
+                      <p><label><input type="checkbox" name="tskills[]" value="SQL"> SQL</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="Python or R"> Python or R</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="Power BI / Tableau"> Power BI / Tableau</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="Statistics"> Statistics</label></p>
+                    </div>
+                  
+                    <!-- Developer Skills -->
+                    <div id="developer-skills" style="display: none;">
+                      <p><label><input type="checkbox" name="tskills[]" value="Node.js / Java / Python"> Node.js / Java / Python</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="React / Vue.js"> React / Vue.js</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="REST APIs"> REST APIs</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="Git / Version Control"> Git / Version Control</label></p>
+                    </div>
+
+                  </fieldset>
                 <fieldset>
                     <p>
                         <label for="otherskills">Other Skills</label>
