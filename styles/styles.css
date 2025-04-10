@@ -7,7 +7,7 @@ description: Refers to about.html, apply.html, index.html, jobs .html
 */
 
 .stix-two-text-font-type {
-  font-family: "STIX Two Text", serif;
+  font-family: "Roboto", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -25,7 +25,7 @@ body {
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  font-family: "STIX Two Text", serif;
+  font-family: "Roboto", serif;
   font-size: 30px;
 }
 
@@ -74,26 +74,26 @@ footer {
 }
 .trademark {
   text-align: right;
-  
 }
 
 /* For the Apply page */
 form {
   background-color: #ffffff;
   padding: 30px 40px;
-  border-radius:15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width:60%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
   margin: 0 auto;
 }
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  padding:40px;
+  padding: 40px;
 }
-form p, form fieldset {
+form p,
+form fieldset {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -102,10 +102,12 @@ form p, form fieldset {
 form label {
   margin-bottom: 8px;
   font-weight: bold;
-  font-size: 1.5em
+  font-size: 1.5em;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   width: 60%;
   padding: 8px;
   border-radius: 8px;
@@ -117,7 +119,7 @@ fieldset legend {
   text-align: center;
   font-weight: bold;
   margin-bottom: 15px;
-  font-size: 1.5em
+  font-size: 1.5em;
 }
 
 /* Center group of radio/checkbox options */
@@ -137,7 +139,6 @@ fieldset p {
   gap: 10px;
   margin: 5px 0;
 }
-
 
 fieldset p label {
   font-weight: bold;
@@ -171,7 +172,7 @@ input[type="reset"] {
   accent-color: #3a5a97;
 }
 
-.option-container label{
+.option-container label {
   font-weight: lighter;
   font-size: 1em;
 }
