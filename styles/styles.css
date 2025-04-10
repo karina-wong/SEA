@@ -15,7 +15,7 @@ body {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  padding: 20px;
   font-family: "STIX Two Text", serif;
   font-size: 30px;
 }
@@ -37,8 +37,8 @@ body {
 }
 
 .nav-logo {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   width: 15%;
   display: flex;
   align-items: center;
