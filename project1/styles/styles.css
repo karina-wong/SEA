@@ -62,3 +62,17 @@ body {
   padding-left: 60px;
   padding-right: 60px;
 }
+
+h2 {
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  padding: 30px;
+  background-color: rgb(83, 110, 142);
+}
+.trademark {
+  text-align: right;
+  
+}
