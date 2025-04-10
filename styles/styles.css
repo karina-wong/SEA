@@ -14,7 +14,7 @@ description: Refers to about.html, apply.html, index.html, jobs .html
 }
 
 body {
-  background-color: rgb(69, 92, 124);
+  background-color: #e9edf5;
 
   margin: 0px;
 }
@@ -41,7 +41,7 @@ body {
 .nav-bar {
   display: flex;
   justify-content: space-between;
-  background-color: rgb(83, 110, 142);
+  background-color: #99afc7;
   padding-right: 60px;
 }
 
