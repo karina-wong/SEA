@@ -76,3 +76,102 @@ footer {
   text-align: right;
   
 }
+
+/* For the Apply page */
+form {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius:15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width:60%;
+  margin: 0 auto;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  padding:40px;
+}
+form p, form fieldset {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+form label {
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1.5em
+}
+
+form input, form select, form textarea {
+  width: 60%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+/* Centering legend titles*/
+fieldset legend {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 1.5em
+}
+
+/* Center group of radio/checkbox options */
+fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: none;
+  margin-top: 20px;
+}
+
+/* Style each option row */
+fieldset p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+
+fieldset p label {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"],
+input[type="reset"] {
+  width: auto;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: 10px;
+  cursor: pointer;
+}
+
+/* Container for each radio or checkbox + label */
+.option-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+/* Input left, label right */
+.option-container input[type="radio"],
+.option-container input[type="checkbox"] {
+  margin-right: 5px;
+  transform: scale(1.2);
+  accent-color: #3a5a97;
+}
+
+.option-container label{
+  font-weight: lighter;
+  font-size: 1em;
+}
