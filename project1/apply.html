@@ -10,16 +10,21 @@
     </head>
     <body>
         <header>
-            <h1>SEA</h1>
-              <!-- Navigation Bar -->
-        <nav class="menu">
-            <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="jobs.html">Job Positions</a></li>
-            <li><a href="apply.html">Applications</a></li>
-            </ul>
-        </nav>
+            <div class="nav-bar">
+                <div class="nav-logo">
+                  <img src="/images/Logo_idk.png" alt="SEA Company Logo" />
+                </div>
+                <div class="nav-links">
+                  <nav class="menu about">
+                    <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="about.html">About Us</a></li>
+                      <li><a href="jobs.html">Job Positions</a></li>
+                      <li><a href="apply.html">Applications</a></li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
         </header>
         <main>
             <form method="post" action="http://mercury.swin.edu.au/it000000/formtest.php">
@@ -27,8 +32,8 @@
                     <label for="reference_number">Reference Number: </label> 
                     <select name="reference_number" id="reference_number">
                         <option value="">Please Select</option>	
-                        <option value="job1">Data analyst - DA672</option>			
-                        <option value="job2">Software dev - SD516</option>	
+                        <option value="job1">Data analyst - DA102</option>			
+                        <option value="job2">Software dev - SD309</option>	
                         <option value="other">Other</option>
                     </select>
                 </p>
@@ -92,13 +97,11 @@
                 </p>
                 <fieldset>
                     <legend>Required Technical Skills</legend>
-                      <p><label><input type="checkbox" name="tskills[]" value="SQL"> SQL</label></p>
-                      <p><label><input type="checkbox" name="tskills[]" value="Python or R"> Python or R</label></p>
-                      <p><label><input type="checkbox" name="tskills[]" value="Power BI / Tableau"> Power BI / Tableau</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="HTML"> HTML</label></p>
+                      <p><label><input type="checkbox" name="tskills[]" value="Ruby"> Ruby </label></p>
                       <p><label><input type="checkbox" name="tskills[]" value="Statistics"> Statistics</label></p>
                       <p><label><input type="checkbox" name="tskills[]" value="Node.js / Java / Python"> Node.js / Java / Python</label></p>
                       <p><label><input type="checkbox" name="tskills[]" value="React / Vue.js"> React / Vue.js</label></p>
-                      <p><label><input type="checkbox" name="tskills[]" value="REST APIs"> REST APIs</label></p>
                   </fieldset>
                 <fieldset>
                     <p>
