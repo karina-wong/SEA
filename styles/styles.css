@@ -1,3 +1,11 @@
+/*
+filename: styles.css
+author: Karina Wong, Nathan Nguyen, Cee
+created: 3/04/25
+last modified: 10/4/25
+description: Refers to about.html, apply.html, index.html, jobs .html
+*/
+
 .stix-two-text-font-type {
   font-family: "STIX Two Text", serif;
   font-optical-sizing: auto;
@@ -11,6 +19,7 @@ body {
   margin: 0px;
 }
 
+/* Nav Bar CSS */
 .about ul {
   list-style: none;
   display: flex;
