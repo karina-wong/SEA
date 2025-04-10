@@ -13,22 +13,30 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
+    <!-- Require links for using Animate CSS API-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="styles/styles.css" />
 
-    <title>About Us</title>
+    <title>About Us Page</title>
   </head>
   <body>
     <header>
       <div class="nav-bar">
         <div class="nav-logo">
-          <img src="images/Logo_idk.png" alt="SEA Company Logo" />
+          <img
+            src="images/Logo_idk.png"
+            alt="SEA Company Logo"
+            class="animate__lightSpeedInLeft animate__wobble"
+          />
         </div>
         <div class="nav-links">
           <nav class="menu about">
             <ul>
               <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
+              <li class="active-page"><a href="about.html">About Us</a></li>
               <li><a href="jobs.html">Job Positions</a></li>
               <li><a href="apply.html">Applications</a></li>
             </ul>
@@ -36,133 +44,141 @@
         </div>
       </div>
     </header>
-    <main>
+    <main class="about-us">
       <h1>About Us</h1>
-      <h2>SEA</h2>
-      <h3>Thursday 10:30am Razeen</h3>
-      <h3>Member Contributions</h3>
-      <dl>
-        <dt>Nathan</dt>
-        <dd>
-          <ul>
-            <li>Chief Communicator</li>
-          </ul>
-        </dd>
+      <div class="contribution">
+        <div class="text-contribution">
+          <h2>SEA</h2>
+          <h3>Thursday 10:30am Razeen</h3>
+          <h4>Member Contributions</h4>
+          <dl>
+            <dt>Nathan</dt>
+            <dd>
+              <ul>
+                <li>Chief Communicator</li>
+              </ul>
+            </dd>
 
-        <dt>Cee</dt>
-        <dd>
-          <ul>
-            <li>Main Architect</li>
-          </ul>
-        </dd>
-        <dt>Karina</dt>
-        <dd>
-          <ul>
-            <li>Team Leader</li>
-          </ul>
-        </dd>
-      </dl>
-      <figure>
-        <img src="images/CEO.jpg" alt="Group photo of all members." />
-        <figcaption>Group photo of Cee, Nathan & Karina</figcaption>
-      </figure>
-      <h3>Get to know our interests!</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>What is your favourite:</th>
-            <th>Karina</th>
-            <th>Nathan</th>
-            <th>Cee</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Colour</td>
-            <td>#7d93ba</td>
-            <td>#87CEEB</td>
-            <td>#22b9f5</td>
-          </tr>
-          <tr>
-            <td>Animal</td>
-            <td>Northern sandhill frog</td>
-            <td>Penguin</td>
-            <td>Capybara</td>
-          </tr>
-          <tr>
-            <td>Movie</td>
-            <td>Death becomes her</td>
-            <td>The Greatest Showman</td>
-            <td>The Minecraft Movie (A Silent Voice)</td>
-          </tr>
-          <tr>
-            <td>Song/Artist</td>
-            <td>Daniel Caesar</td>
-            <td>Avicii</td>
-            <td>Yung kai</td>
-          </tr>
-          <tr>
-            <td>Game</td>
-            <td>Solitaire</td>
-            <td>Minecraft</td>
-            <td>Minecraft</td>
-          </tr>
-          <tr>
-            <td>Book/Author</td>
-            <td>Fyodor Dostoevsky</td>
-            <td>Brandon Sanderson</td>
-            <td>Sugaru Miaki/Kanehito Yamada</td>
-          </tr>
-          <tr>
-            <td>Food/cusine</td>
-            <td>Cantonese</td>
-            <td>Japanese</td>
-            <td>Japanese/Thai food</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>Top 5 Interests:</th>
-            <th>Karina</th>
-            <th>Nathan</th>
-            <th>Cee</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1.</td>
-            <td>Listening to music</td>
-            <td>Playing Euphonium</td>
-            <td>Drawing</td>
-          </tr>
-          <tr>
-            <td>2.</td>
-            <td>Reading</td>
-            <td>Hiking/ Camping</td>
-            <td>Cooking/Baking</td>
-          </tr>
-          <tr>
-            <td>3.</td>
-            <td>Pikmin</td>
-            <td>Reading/ writing</td>
-            <td>Singing/Playing acoustic guitar</td>
-          </tr>
-          <tr>
-            <td>4.</td>
-            <td>Playing guitar</td>
-            <td>Swimming/ Cycling</td>
-            <td>Writing stories (and poems every now and then)</td>
-          </tr>
-          <tr>
-            <td>5.</td>
-            <td>Cooking</td>
-            <td>Gaming</td>
-            <td>Gaming</td>
-          </tr>
-        </tbody>
-      </table>
+            <dt>Cee</dt>
+            <dd>
+              <ul>
+                <li>Main Architect</li>
+              </ul>
+            </dd>
+            <dt>Karina</dt>
+            <dd>
+              <ul>
+                <li>Team Leader</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+        <figure>
+          <img src="images/group_photo.jpg" alt="Group photo of all members." />
+          <figcaption>Group photo of Cee, Nathan & Karina</figcaption>
+        </figure>
+      </div>
+
+      <div class="interests">
+        <h5>Get to know our favourites!</h5>
+        <table class="favourite-table">
+          <thead>
+            <tr>
+              <th>What is your favourite:</th>
+              <th>Karina</th>
+              <th>Nathan</th>
+              <th>Cee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Colour</td>
+              <td class="karina-colour">#7d93ba</td>
+              <td class="nathan-colour">#87CEEB</td>
+              <td class="cee-colour">#22b9f5</td>
+            </tr>
+            <tr>
+              <td>Animal</td>
+              <td>Northern sandhill frog</td>
+              <td>Penguin</td>
+              <td>Capybara</td>
+            </tr>
+            <tr>
+              <td>Movie</td>
+              <td>Death becomes her</td>
+              <td>The Greatest Showman</td>
+              <td>The Minecraft Movie (A Silent Voice)</td>
+            </tr>
+            <tr>
+              <td>Song/Artist</td>
+              <td>Daniel Caesar</td>
+              <td>Avicii</td>
+              <td>Yung kai</td>
+            </tr>
+            <tr>
+              <td>Game</td>
+              <td>Solitaire</td>
+              <td>Minecraft</td>
+              <td>Minecraft</td>
+            </tr>
+            <tr>
+              <td>Book/Author</td>
+              <td>Fyodor Dostoevsky</td>
+              <td>Brandon Sanderson</td>
+              <td>Sugaru Miaki/Kanehito Yamada</td>
+            </tr>
+            <tr>
+              <td>Food/cusine</td>
+              <td>Cantonese</td>
+              <td>Japanese</td>
+              <td>Japanese/Thai food</td>
+            </tr>
+          </tbody>
+        </table>
+        <h5>Get to know our interests!</h5>
+        <table class="interest-table">
+          <thead>
+            <tr>
+              <th>Top 5 Interests:</th>
+              <th>Karina</th>
+              <th>Nathan</th>
+              <th>Cee</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1.</td>
+              <td>Listening to music</td>
+              <td>Playing Euphonium</td>
+              <td>Drawing</td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td>Reading</td>
+              <td>Hiking/ Camping</td>
+              <td>Cooking/Baking</td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td>Pikmin</td>
+              <td>Reading/ writing</td>
+              <td>Singing/Playing acoustic guitar</td>
+            </tr>
+            <tr>
+              <td>4.</td>
+              <td>Playing guitar</td>
+              <td>Swimming/ Cycling</td>
+              <td>Writing stories (and poems every now and then)</td>
+            </tr>
+            <tr>
+              <td>5.</td>
+              <td>Cooking</td>
+              <td>Gaming</td>
+              <td>Gaming</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
     <aside>
       <section class="student-ids">
