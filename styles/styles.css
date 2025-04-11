@@ -178,7 +178,7 @@ input[type="reset"] {
 .option-container {
   display: inline;
   align-items: left;
-  justify-content: flex-start;
+  justify-content: left;
   margin: 0;
 }
 
