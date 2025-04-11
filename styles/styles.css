@@ -90,9 +90,7 @@ footer h1 {
 footer h2 {
   font-size: 16px;
 }
-.trademark {
-  text-align: right; /* Not sure what this is doing */
-}
+
 
 /* For the Apply page */
 form {
@@ -400,4 +398,67 @@ h1.job-page-title {
 
 .job-description section {
   margin-bottom: 80px;
+}
+
+/* Index Page */
+
+.homepic {
+  width: 750px;
+  float: left;
+  padding: 75px;
+  position: relative;
+  left: 50px;
+  bottom: 150px;
+  
+}
+
+/* General Read more Button */
+
+.readmore {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #99afc7;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* About Company Paragraph */
+
+.aboutcompany {
+  margin-left: auto;
+  font-size: 135%;
+  overflow: auto;
+  
+}
+
+.companyparagraph {
+  position: relative;
+  margin-left: 500px;
+  padding-left: 500px;
+  top:250px
+}
+
+ul li {
+  text-align: center;
+}
+.mission {
+  position:relative;
+  top: 50px;
+  position: relative;
+  left: 50px;
+}
+
+.companyread {
+  position: relative;
+  top:280px;
+  left:500px;
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 50px;
+  background-color: #99afc7;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
 }
