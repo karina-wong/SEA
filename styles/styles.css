@@ -176,8 +176,8 @@ input[type="reset"] {
 
 /* Container for each radio or checkbox + label */
 .option-container {
-  display: flex;
-  align-items: center;
+  display: inline;
+  align-items: left;
   justify-content: flex-start;
   margin: 0;
 }
