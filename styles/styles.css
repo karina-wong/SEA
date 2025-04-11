@@ -184,9 +184,8 @@ input[type="reset"]:hover {
 
 /* Container for each radio or checkbox + label */
 .option-container {
-  display: inline;
-  align-items: left;
-  justify-content: left;
+  display: inline-block;
+  vertical-align: middle;
   margin: 0;
 }
 
@@ -201,6 +200,8 @@ input[type="reset"]:hover {
 .option-container label {
   font-weight: lighter;
   font-size: 1em;
+  margin: 0;
+  vertical-align: middle;
 }
 
 /* for about us Page*/
