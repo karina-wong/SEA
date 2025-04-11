@@ -6,16 +6,14 @@ last modified: 10/4/25
 description: Refers to about.html, apply.html, index.html, jobs .html
 */
 
-.stix-two-text-font-type {
-  font-family: "STIX Two Text", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+/* General styling for headers*/
+h1 {
+  font-size: 38px;
 }
 
 body {
   background-color: #e9edf5;
-
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
   margin: 0px;
 }
 
@@ -24,9 +22,12 @@ body {
   list-style: none;
   display: flex;
   justify-content: space-between;
-  padding: 20px;
-  font-family: "STIX Two Text", serif;
-  font-size: 30px;
+  padding: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
+  font-weight: 400;
+  font-size: 28px;
 }
 
 .about ul li a {
@@ -46,11 +47,18 @@ body {
 }
 
 .nav-logo {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 10px 0px 10px 10px;
+
   width: 15%;
   display: flex;
   align-items: center;
+
+  animation: lightSpeedInLeft;
+  animation-duration: 2s;
+}
+.nav-logo:hover {
+  -webkit-animation: wobble 2s;
+  animation: wobble 2s;
 }
 
 .nav-logo img {
@@ -59,8 +67,9 @@ body {
 
 .nav-links {
   width: 85%;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-top: 30px;
+  padding-left: 90px;
+  padding-right: 90px;
 }
 
 h2 {
@@ -71,29 +80,38 @@ h2 {
 footer {
   padding: 30px;
   background-color: #99afc7;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer h1 {
+  font-size: 20px;
+}
+footer h2 {
+  font-size: 16px;
 }
 .trademark {
-  text-align: right;
-  
+  text-align: right; /* Not sure what this is doing */
 }
 
 /* For the Apply page */
 form {
   background-color: #ffffff;
   padding: 30px 40px;
-  border-radius:15px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width:60%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 60%;
   margin: 0 auto;
 }
 .form-container {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  padding:40px;
+  padding: 40px;
 }
-form p, form fieldset {
+form p,
+form fieldset {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -102,10 +120,12 @@ form p, form fieldset {
 form label {
   margin-bottom: 8px;
   font-weight: bold;
-  font-size: 1.5em
+  font-size: 1.5em;
 }
 
-form input, form select, form textarea {
+form input,
+form select,
+form textarea {
   width: 60%;
   padding: 8px;
   border-radius: 8px;
@@ -117,7 +137,7 @@ fieldset legend {
   text-align: center;
   font-weight: bold;
   margin-bottom: 15px;
-  font-size: 1.5em
+  font-size: 1.5em;
 }
 
 /* Center group of radio/checkbox options */
@@ -137,7 +157,6 @@ fieldset p {
   gap: 10px;
   margin: 5px 0;
 }
-
 
 fieldset p label {
   font-weight: bold;
@@ -171,7 +190,205 @@ input[type="reset"] {
   accent-color: #3a5a97;
 }
 
-.option-container label{
+.option-container label {
   font-weight: lighter;
   font-size: 1em;
+}
+
+/* for about us Page*/
+.about-us {
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.about-us h1 {
+  font-weight: 300;
+  font-size: 5.25em;
+  margin-top: 100px;
+}
+
+.about-us h5 {
+  font-weight: 200;
+  font-size: 30px;
+}
+
+.about-us .main-information {
+  padding: 40px;
+}
+
+.about-us table,
+.about-us td,
+.about-us th {
+  border: 3px solid rgb(47, 58, 118);
+}
+
+.contribution {
+  margin-top: 100px;
+}
+
+.text-contribution {
+  float: left;
+  border: 5px solid black;
+  padding: 30px 50px;
+  margin-left: 250px;
+  border-radius: 8px;
+  line-height: 2.5em;
+}
+.text-contribution h2 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.text-contribution h3 {
+  font-size: 30px;
+  font-weight: 200;
+}
+.text-contribution h4 {
+  font-size: 25px;
+  font-weight: 400;
+}
+.text-contribution dt {
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.text-contribution li {
+  text-align: start;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+figure img {
+  border: 10px solid rgb(47, 58, 118);
+  border-bottom: 60px solid rgb(47, 58, 118);
+}
+
+figure {
+  float: right;
+  margin-right: 250px;
+}
+
+.interest-table,
+.favourite-table {
+  background-color: #b8e1f2;
+  font-size: 19px;
+  width: 100%;
+}
+
+.interests {
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.interest-table td,
+.interest-table th,
+.favourite-table td,
+.favourite-table th {
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.interest-table td:hover,
+.interest-table th:hover,
+.favourite-table td:hover,
+.favourite-table th:hover {
+  background-color: #5f6c84c0;
+  color: #e9edf5;
+}
+
+.interest-table {
+  margin-top: 50px;
+}
+
+.favourite-table .karina-colour {
+  background-color: #7d93ba;
+}
+.favourite-table .nathan-colour {
+  background-color: #87ceeb;
+}
+.favourite-table .cee-colour {
+  background-color: #22b9f5;
+}
+
+.student-ids {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 100px;
+  padding: 30px;
+}
+
+/* Can add to emphasise which page is selected*/
+header ul .active-page a {
+  color: rgb(99, 131, 201);
+}
+
+.job-description {
+  padding: 40px;
+  text-align: center;
+  list-style-position: inside;
+  display: flex;
+}
+
+.job-description .jobs {
+  width: 65%;
+  padding: 10px 55px;
+  line-height: 2em;
+}
+
+.data-analyst,
+.software-developer {
+  margin-top: 90px;
+}
+
+h1.job-page-title {
+  font-family: monospace;
+  font-weight: 100;
+  font-size: 55px;
+  text-align: center;
+  margin-top: 150px;
+}
+.job-description h2 {
+  font-weight: 300;
+  font-size: 35px;
+  margin-top: 30px;
+}
+.job-description h3 {
+  font-weight: 400;
+  font-size: 30px;
+  margin-top: 40px;
+}
+.job-description h4 {
+  font-weight: 100;
+  font-size: 25px;
+}
+.job-description p,
+.job-description li {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 2em;
+}
+
+.job-description aside {
+  float: right;
+  width: 25%;
+  margin-top: 50px;
+  border: #3a5a97 1px solid;
+  padding: 2px 30px;
+  overflow: hidden;
+}
+.job-description aside h3 {
+  font-weight: 200;
+}
+.job-description aside li {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+.job-description section {
+  margin-bottom: 80px;
 }
