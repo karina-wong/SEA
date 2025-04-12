@@ -133,8 +133,7 @@ form textarea {
 form input:hover{
   background-color: #ccd9e7;
   color: #000000;
-  border: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color;
 }
 /* Centering legend titles*/
 fieldset legend {
