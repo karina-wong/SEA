@@ -221,7 +221,7 @@ input[type="reset"]:hover {
 }
 
 .group-photo {
-  animation: lightSpeedInRight;
+  animation: slideInRight;
   animation-duration: 2s;
 }
 .about-us h1 {
