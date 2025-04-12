@@ -405,7 +405,7 @@ h1.job-page-title {
 .homepic {
   width: 750px;
   float: left;
-  padding: 75px;
+  padding: 65px;
   position: relative;
   left: 50px;
   bottom: 150px;
@@ -422,6 +422,8 @@ h1.job-page-title {
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
+  position: relative;
+  top:20px;
 }
 
 /* About Company Paragraph */
@@ -430,6 +432,8 @@ h1.job-page-title {
   margin-left: auto;
   font-size: 135%;
   overflow: auto;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
+  font-weight: 400; 
   
 }
 
@@ -441,13 +445,16 @@ h1.job-page-title {
 }
 
 ul li {
-  text-align: center;
+  padding: 4px;
 }
 .mission {
   position:relative;
-  top: 50px;
+  bottom: 120px;
   position: relative;
   left: 50px;
+  font-size: 125%;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
+  font-weight: 400;
 }
 
 .companyread {
@@ -461,4 +468,5 @@ ul li {
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
+  font-family: "Roboto", sans-serif, Arial, Helvetica;
 }
