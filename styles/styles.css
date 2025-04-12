@@ -83,6 +83,9 @@ footer {
   text-align: center;
   font-size: 12px;
 }
+footer img {
+  width: 150px;
+}
 
 footer h1 {
   font-size: 20px;
@@ -130,7 +133,9 @@ form textarea {
   text-align: center;
 }
 
-form input:hover, form select:hover, form textarea:hover {
+form input:hover,
+form select:hover,
+form textarea:hover {
   background-color: #ccd9e7;
   color: #000000;
   transition: background-color;
