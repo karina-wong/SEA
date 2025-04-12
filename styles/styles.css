@@ -129,6 +129,13 @@ form textarea {
   border: 1px solid #ccc;
   text-align: center;
 }
+
+form input:hover{
+  background-color: #ccd9e7;
+  color: #000000;
+  border: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 /* Centering legend titles*/
 fieldset legend {
   text-align: center;
@@ -197,7 +204,7 @@ input[type="reset"]:hover {
 }
 
 .option-container label {
-  font-weight: lighter;
+  font-weight: normal;
   font-size: 1em;
   margin-left: -10%;
 }
