@@ -403,9 +403,9 @@ h1.job-page-title {
 /* Index Page */
 
 .home_pic {
-  width: 750px;
+  width: 850px;
   float: left;
-  padding: 65px;
+  padding: 45px;
   position: relative;
   left: 50px;
   bottom: 150px;
@@ -449,7 +449,7 @@ ul li {
 }
 .mission {
   position:relative;
-  bottom: 120px;
+  bottom: 150px;
   position: relative;
   left: 50px;
   font-size: 125%;
@@ -459,8 +459,8 @@ ul li {
 
 .company_read {
   position: relative;
-  top:280px;
-  left:500px;
+  top:295px;
+  left:450px;
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
