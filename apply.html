@@ -8,7 +8,6 @@
         <meta name="author" content="Nathan Nguyen">
         <title>SEA application page</title>
         <link href="styles/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     </head>
     <body>
         <header>
@@ -22,7 +21,7 @@
                       <li><a href="index.html">Home</a></li>
                       <li><a href="about.html">About Us</a></li>
                       <li><a href="jobs.html">Job Positions</a></li>
-                      <li class="active-page"><a href="apply.html">Applications</a></li>
+                      <li><a href="apply.html">Applications</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -55,14 +54,22 @@
                     </p>
                     <fieldset>
                     <legend>Gender</legend>
-                        <p>
-                            <div class="option-container">
-                                <label><input type="radio" name="gender" value="male"> Male</label>
-                                <label><input type="radio" name="gender" value="female"> Female</label>
-                               <label><input type="radio" name="gender" value="non-binary"> Non-binary</label>
-                                <label><input type="radio" name="gender" value="unspecified"> Prefer not to say</label>
-                            </div>
-                        </p>
+                    <div class="option-container">
+                        <input type="radio" name="gender" value="male" id="gender-male">
+                        <label for="gender-male">Male</label>
+                      </div>
+                      <div class="option-container">
+                        <input type="radio" name="gender" value="female" id="gender-female">
+                        <label for="gender-female">Female</label>
+                      </div>
+                      <div class="option-container">
+                        <input type="radio" name="gender" value="non-binary" id="gender-nonbinary">
+                        <label for="gender-nonbinary">Non-binary</label>
+                      </div>
+                      <div class="option-container">
+                        <input type="radio" name="gender" value="unspecified" id="gender-unspecified">
+                        <label for="gender-unspecified">Prefer not to say</label>
+                      </div>
                     </fieldset>
                     <p>
                         <label for="street_address">Street Address: </label> 
@@ -100,18 +107,33 @@
                     <fieldset>
                         <legend>Required Technical Skills</legend>
                         <div class="option-container">
-                            <label><input type="checkbox" name="tskills[]" value="HTML"> HTML</label>
-                            <label><input type="checkbox" name="tskills[]" value="Ruby"> Ruby</label>
-                            <label><input type="checkbox" name="tskills[]" value="Statistics"> Python</label>
-                            <label><input type="checkbox" name="tskills[]" value="Java / Python"> Java </label>
-                            <label><input type="checkbox" name="tskills[]" value="React / Vue.js"> React / Vue.js</label>
+                            <input type="checkbox" name="tskills[]" value="HTML" id="html">
+                            <label for="html">HTML</label>
+                          </div>
+                          <div class="option-container">
+                            <input type="checkbox" name="tskills[]" value="Ruby" id="ruby">
+                            <label for="ruby">Ruby</label>
+                          </div>
+                          <div class="option-container">
+                            <input type="checkbox" name="tskills[]" value="Statistics" id="stats">
+                            <label for="stats">Python</label>
+                          </div>
+                          <div class="option-container">
+                            <input type="checkbox" name="tskills[]" value="Java / Python" id="javapy">
+                            <label for="javapy">Java</label>
+                          </div>
+                          <div class="option-container">
+                            <input type="checkbox" name="tskills[]" value="React / Vue.js" id="reactvue">
+                            <label for="reactvue">React / Vue.js</label>
                           </div>
                     </fieldset>
                     <fieldset>
+                        <div class="otherskills">
                         <p>
                             <label for="otherskills">Other Skills</label>
                             <textarea id="otherskills" name="otherskills" rows="4" cols="40"></textarea>
                         </p>
+                        </div>
                     </fieldset>
                     <input type= "submit" value="Apply">
                     <input type= "reset" value="Reset Form">

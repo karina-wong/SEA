@@ -133,7 +133,7 @@ form textarea {
 fieldset legend {
   text-align: center;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-size: 1.5em;
 }
 
@@ -146,8 +146,8 @@ fieldset {
   margin-top: 20px;
 }
 
-/* Style each option row */
-fieldset p {
+/* Style eotherskills */
+.otherskills p {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -155,7 +155,7 @@ fieldset p {
   margin: 5px 0;
 }
 
-fieldset p label {
+.otherskills p label {
   font-weight: bold;
   font-size: 1.5em;
   margin-left: 5px;
@@ -181,24 +181,25 @@ input[type="reset"]:hover {
 
 /* Container for each radio or checkbox + label */
 .option-container {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0;
+  display: flex;
+  align-items: normal;
+  margin-bottom: 5px;
+  width: 25%;
 }
 
 /* Input left, label right */
 .option-container input[type="radio"],
 .option-container input[type="checkbox"] {
-  margin-right: 5px;
-  transform: scale(1.2);
+  margin-right:-10%;
+  transform: scale(1);
   accent-color: #3a5a97;
+  margin-top: 0px;
 }
 
 .option-container label {
   font-weight: lighter;
   font-size: 1em;
-  margin: 0;
-  vertical-align: middle;
+  margin-left: -10%;
 }
 
 /* for about us Page*/
