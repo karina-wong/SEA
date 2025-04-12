@@ -405,7 +405,7 @@ h1.job-page-title {
   width: 850px;
   float: left;
   padding: 45px;
-  position: relative;
+
   left: 50px;
   bottom: 150px;
 }
@@ -420,7 +420,7 @@ h1.job-page-title {
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
-  position: relative;
+
   top: 20px;
 }
 
@@ -435,7 +435,6 @@ h1.job-page-title {
 }
 
 .company_paragraph {
-  position: relative;
   margin-left: 500px;
   padding-left: 500px;
   top: 250px;
@@ -445,9 +444,8 @@ ul li {
   padding: 4px;
 }
 .mission {
-  position: relative;
   bottom: 150px;
-  position: relative;
+
   left: 50px;
   font-size: 125%;
   font-family: "Roboto", sans-serif, Arial, Helvetica;
@@ -455,7 +453,6 @@ ul li {
 }
 
 .company_read {
-  position: relative;
   top: 295px;
   left: 450px;
   border: 2px solid;
