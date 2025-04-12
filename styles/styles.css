@@ -400,11 +400,12 @@ h1.job-page-title {
 }
 
 /* Index Page */
+.home-page {
+  margin: 70px;
+}
 
 .home_pic {
-  width: 850px;
-  float: left;
-  padding: 45px;
+  width: 100%;
 
   left: 50px;
   bottom: 150px;
@@ -428,33 +429,25 @@ h1.job-page-title {
 
 .about_company {
   margin-left: auto;
-  font-size: 135%;
-
+  font-size: 1.35em;
+  display: flex;
   font-family: "Roboto", sans-serif, Arial, Helvetica;
   font-weight: 400;
 }
-
-.company_paragraph {
-  margin-left: 500px;
-  padding-left: 500px;
-  top: 250px;
+.company-intro {
+  margin-left: 50px;
 }
 
 ul li {
   padding: 4px;
 }
 .mission {
-  bottom: 150px;
-
-  left: 50px;
   font-size: 125%;
   font-family: "Roboto", sans-serif, Arial, Helvetica;
   font-weight: 400;
 }
 
 .company_read {
-  top: 295px;
-  left: 450px;
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
