@@ -402,7 +402,7 @@ h1.job-page-title {
 
 /* Index Page */
 
-.homepic {
+.home_pic {
   width: 750px;
   float: left;
   padding: 65px;
@@ -414,7 +414,7 @@ h1.job-page-title {
 
 /* General Read more Button */
 
-.readmore {
+.read_more {
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
@@ -428,7 +428,7 @@ h1.job-page-title {
 
 /* About Company Paragraph */
 
-.aboutcompany {
+.about_company {
   margin-left: auto;
   font-size: 135%;
   overflow: auto;
@@ -437,7 +437,7 @@ h1.job-page-title {
   
 }
 
-.companyparagraph {
+.company_paragraph {
   position: relative;
   margin-left: 500px;
   padding-left: 500px;
@@ -457,7 +457,7 @@ ul li {
   font-weight: 400;
 }
 
-.companyread {
+.company_read {
   position: relative;
   top:280px;
   left:500px;
