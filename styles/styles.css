@@ -436,6 +436,7 @@ h1.job-page-title {
 
 .read_more:hover {
   color: rgb(99, 131, 201);
+  background-color: #ffffff;
 }
 
 /* About Company Paragraph */
@@ -473,4 +474,5 @@ ul li {
 
 .company_read:hover {
   color: rgb(99, 131, 201);
+  background-color: #ffffff;
 }
