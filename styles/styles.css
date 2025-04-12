@@ -420,7 +420,7 @@ h1.job-page-title {
   bottom: 150px;
 }
 
-/* General Read more Button */
+/* Bottom Read more Button */
 
 .read_more {
   border: 2px solid;
@@ -460,6 +460,8 @@ ul li {
   font-family: "Roboto", sans-serif, Arial, Helvetica;
   font-weight: 400;
 }
+
+/* About Company Read more button */
 
 .company_read {
   border: 2px solid;
