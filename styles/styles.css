@@ -434,6 +434,10 @@ h1.job-page-title {
   top: 20px;
 }
 
+.read_more:hover {
+  color: rgb(99, 131, 201);
+}
+
 /* About Company Paragraph */
 
 .about_company {
@@ -465,4 +469,8 @@ ul li {
   color: #ffffff;
   text-decoration: none;
   font-family: "Roboto", sans-serif, Arial, Helvetica;
+}
+
+.company_read:hover {
+  color: rgb(99, 131, 201);
 }
