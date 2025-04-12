@@ -130,7 +130,7 @@ form textarea {
   text-align: center;
 }
 
-form input:hover {
+form input:hover, form select:hover, form textarea:hover {
   background-color: #ccd9e7;
   color: #000000;
   transition: background-color;
@@ -220,6 +220,10 @@ input[type="reset"]:hover {
   margin-top: 40px;
 }
 
+.group-photo {
+  animation: slideInRight;
+  animation-duration: 2s;
+}
 .about-us h1 {
   font-weight: 300;
   font-size: 5.25em;
