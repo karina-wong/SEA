@@ -130,7 +130,7 @@ form textarea {
   text-align: center;
 }
 
-form input:hover{
+form input:hover {
   background-color: #ccd9e7;
   color: #000000;
   transition: background-color;
@@ -196,7 +196,7 @@ input[type="reset"]:hover {
 /* Input left, label right */
 .option-container input[type="radio"],
 .option-container input[type="checkbox"] {
-  margin-right:-10%;
+  margin-right: -10%;
   transform: scale(1);
   accent-color: #3a5a97;
   margin-top: 0px;
@@ -390,9 +390,12 @@ h1.job-page-title {
   float: right;
   width: 25%;
   margin-top: 50px;
-  border: #3a5a97 1px solid;
   padding: 2px 30px;
   overflow: hidden;
+}
+.job-description aside div {
+  border: #3a5a97 1px solid;
+  padding: 10px;
 }
 .job-description aside h3 {
   font-weight: 200;
