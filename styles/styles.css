@@ -91,7 +91,6 @@ footer h2 {
   font-size: 16px;
 }
 
-
 /* For the Apply page */
 form {
   background-color: #ffffff;
@@ -409,7 +408,6 @@ h1.job-page-title {
   position: relative;
   left: 50px;
   bottom: 150px;
-  
 }
 
 /* General Read more Button */
@@ -423,7 +421,7 @@ h1.job-page-title {
   color: #ffffff;
   text-decoration: none;
   position: relative;
-  top:20px;
+  top: 20px;
 }
 
 /* About Company Paragraph */
@@ -431,24 +429,23 @@ h1.job-page-title {
 .about_company {
   margin-left: auto;
   font-size: 135%;
-  overflow: auto;
+
   font-family: "Roboto", sans-serif, Arial, Helvetica;
-  font-weight: 400; 
-  
+  font-weight: 400;
 }
 
 .company_paragraph {
   position: relative;
   margin-left: 500px;
   padding-left: 500px;
-  top:250px
+  top: 250px;
 }
 
 ul li {
   padding: 4px;
 }
 .mission {
-  position:relative;
+  position: relative;
   bottom: 150px;
   position: relative;
   left: 50px;
@@ -459,8 +456,8 @@ ul li {
 
 .company_read {
   position: relative;
-  top:295px;
-  left:450px;
+  top: 295px;
+  left: 450px;
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
