@@ -514,7 +514,7 @@ ul li {
     display: block;
   }
   .job-description .jobs {
-    width: 80%;
+    width: 80% !important;
   }
   .job-description .jobs h2 {
     font-size: 28px;
@@ -526,7 +526,7 @@ ul li {
     float: none;
     padding: 10px;
     margin: 10px;
-    width: 80%;
+    width: 80% !important;
     margin: 0 auto;
   }
   .job-description .jobs ul {
