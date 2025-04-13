@@ -492,6 +492,15 @@ ul li {
   color: rgb(99, 131, 201);
   background-color: #ffffff;
 }
+.up-arrow a:visited {
+  color: #333;
+}
+.up-arrow {
+  position: sticky;
+  bottom: 30px;
+  float: right;
+  margin-right: 20px;
+}
 @media screen and (max-width: 820px) {
   .about-us .contribution {
     grid-template-columns: 1fr;
