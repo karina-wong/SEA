@@ -487,3 +487,74 @@ ul li {
   color: rgb(99, 131, 201);
   background-color: #ffffff;
 }
+@media screen and (max-width: 820px) {
+  .about-us .contribution {
+    grid-template-columns: 1fr;
+  }
+  .about-us figure {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .about-us .text-contribution {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+  .interests .table-wrapper {
+    overflow-x: auto;
+    margin: 0 auto;
+  }
+
+  .job-description {
+    display: block;
+  }
+  .job-description .jobs {
+    width: 80%;
+  }
+  .job-description .jobs h2 {
+    font-size: 28px;
+  }
+  .job-description .jobs h3 {
+    font-size: 23px;
+  }
+  .job-description aside {
+    float: none;
+    padding: 10px;
+    margin: 10px;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .job-description .jobs ul {
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 375px) {
+  .student-ids {
+    margin-right: 0px;
+  }
+  .interests .table-wrapper {
+    width: 270px !important;
+    overflow-x: auto;
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+  }
+  .text-contribution ul {
+    text-align: start;
+  }
+  .text-contribution dd {
+    margin: 0px;
+  }
+
+  .jobs {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .job-description {
+    padding: 0;
+  }
+}
