@@ -68,8 +68,8 @@ body {
 .nav-links {
   width: 85%;
   padding-top: 30px;
-  padding-left: 90px;
-  padding-right: 90px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 h2 {
