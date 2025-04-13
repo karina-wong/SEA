@@ -428,7 +428,7 @@ h1.job-page-title {
   margin: 70px;
 }
 
-.home_pic {
+.home-pic {
   width: 100%;
   left: 50px;
   bottom: 150px;
@@ -436,7 +436,7 @@ h1.job-page-title {
 
 /* Bottom Read more Button */
 
-.read_more {
+.read-more {
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
@@ -448,14 +448,14 @@ h1.job-page-title {
   top: 20px;
 }
 
-.read_more:hover {
+.read-more:hover {
   color: rgb(99, 131, 201);
   background-color: #ffffff;
 }
 
 /* About Company Paragraph */
 
-.about_company {
+.about-company {
   margin-left: auto;
   font-size: 1.35em;
   display: flex;
@@ -477,7 +477,7 @@ ul li {
 
 /* About Company Read more button */
 
-.company_read {
+.company-read {
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
