@@ -288,11 +288,15 @@ input[type="reset"]:hover {
 figure img {
   border: 10px solid rgb(47, 58, 118);
   border-bottom: 60px solid rgb(47, 58, 118);
+  width: 100%;
 }
 
 figure {
-  float: right;
-  margin-right: 250px;
+  float: left;
+  margin-right: 15%;
+  height: auto;
+
+  flex: 1;
 }
 
 .interest-table,
