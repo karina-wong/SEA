@@ -212,7 +212,7 @@ input[type="reset"]:hover {
   margin-left: -10%;
 }
 
-/* for about us Page*/
+/* Styling for about us Page*/
 .about-us {
   text-align: center;
   padding-left: 50px;
@@ -254,7 +254,7 @@ input[type="reset"]:hover {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
-
+/* grid was used because it was easier to account for when resizing was necessary */
 .text-contribution {
   float: left;
   border: 5px solid black;
@@ -353,7 +353,7 @@ figure {
 header ul .active-page a {
   color: rgb(99, 131, 201);
 }
-
+/* Styling for job description */
 .job-description {
   padding: 40px;
   text-align: center;
@@ -492,6 +492,17 @@ ul li {
   color: rgb(99, 131, 201);
   background-color: #ffffff;
 }
+/* Up-arrow styling & position sticky to ensure it stays at the bottom of the page */
+.up-arrow a {
+  border: 2px solid #3a5a97;
+  padding: 20px;
+  background-color: #e9edf5;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 900;
+  color: #333;
+  border-radius: 30px;
+}
 .up-arrow a:visited {
   color: #333;
 }
@@ -518,6 +529,7 @@ ul li {
     overflow-x: auto;
     margin: 0 auto;
   }
+  /* Needed assistance with how to ensure smaller screens had access to the table & ensure table didn't push other elements, used: https://www.youtube.com/watch?v=uMtyxRSqxIk&t=240s*/
 
   .job-description {
     display: block;
