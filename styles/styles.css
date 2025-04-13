@@ -27,7 +27,7 @@ body {
   padding-right: 60px;
   font-family: "Roboto", sans-serif, Arial, Helvetica;
   font-weight: 400;
-  font-size: 28px;
+  font-size: 2vw;
 }
 
 .about ul li a {
@@ -231,13 +231,13 @@ input[type="reset"]:hover {
 }
 .about-us h1 {
   font-weight: 300;
-  font-size: 5.25em;
+  font-size: clamp(2rem, 4vw, 6rem);
   margin-top: 100px;
 }
 
 .about-us h5 {
   font-weight: 200;
-  font-size: 30px;
+  font-size: clamp(2rem, 4vw, 5rem);
 }
 
 .about-us .main-information {
@@ -370,7 +370,7 @@ header ul .active-page a {
 h1.job-page-title {
   font-family: monospace;
   font-weight: 100;
-  font-size: 55px;
+  font-size: 3.5vw;
   text-align: center;
   margin-top: 150px;
 }
