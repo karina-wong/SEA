@@ -203,7 +203,7 @@ input[type="reset"]:hover {
 /* Input left, label right */
 .option-container input[type="radio"],
 .option-container input[type="checkbox"] {
-  margin-right: -10%;
+  margin-right: -7%;
   transform: scale(1);
   accent-color: #3a5a97;
   margin-top: 0px;
@@ -212,7 +212,7 @@ input[type="reset"]:hover {
 .option-container label {
   font-weight: normal;
   font-size: 1em;
-  margin-left: -10%;
+  margin-left: -7%;
 }
 
 /* Styling for about us Page*/
@@ -568,6 +568,23 @@ body {
   .job-description .jobs ul {
     padding-left: 0px;
   }
+
+  .option-container {
+    width: 80%;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+  }
+  .option-container input[type="radio"],
+  .option-container input[type="checkbox"] {
+    transform: scale(0.9);
+    margin-right: 8px;
+    }
+
+  .option-container label {
+      font-size: 1em;
+      margin: 0;
+  }
 }
 
 @media (max-width: 375px) {
@@ -598,4 +615,23 @@ body {
   .job-description {
     padding: 0;
   }
-}
+
+  .option-container {
+    width: 80%;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .option-container input[type="radio"],
+  .option-container input[type="checkbox"] {
+    transform: scale(0.9);
+    margin-right: 8px;
+  }
+
+  .option-container label {
+    font-size: 1em;
+    margin: 0;
+  }
+  }
+
