@@ -354,7 +354,7 @@ figure {
 
 /* Can add to emphasise which page is selected*/
 header ul .active-page a {
-  color: rgb(99, 131, 201);
+  color: rgb(26, 119, 109);
 }
 /* Styling for job description */
 .job-description {
@@ -481,16 +481,13 @@ ul li {
 
 /* Background image (Source: https://stock.adobe.com/au/Library/urn:aaid:sc:AP:d43445cf-3b50-432b-b8df-f91d563b5fdd?asset_id=1006291114) */
 
-body { 
+body {
   background-image: url("styles/images/background.jpeg");
-  background-size:cover;
+  background-size: cover;
   background-position: center;
   margin: 0;
   background-repeat: no-repeat;
-  
 }
-
-
 
 /* About Company Read more button */
 
@@ -581,11 +578,11 @@ body {
   .option-container input[type="checkbox"] {
     transform: scale(0.9);
     margin-right: 8px;
-    }
+  }
 
   .option-container label {
-      font-size: 1em;
-      margin: 0;
+    font-size: 1em;
+    margin: 0;
   }
 }
 
@@ -635,5 +632,4 @@ body {
     font-size: 1em;
     margin: 0;
   }
-  }
-
+}
