@@ -482,7 +482,7 @@ ul li {
 /* Background image (Source: https://stock.adobe.com/au/Library/urn:aaid:sc:AP:d43445cf-3b50-432b-b8df-f91d563b5fdd?asset_id=1006291114) */
 
 body { 
-  background-image: url("/styles/images/background.jpeg");
+  background-image: url("styles/images/background.jpeg");
   background-size:cover;
   background-position: center;
   margin: 0;
