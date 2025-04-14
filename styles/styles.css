@@ -491,7 +491,7 @@ body {
 
 /* About Company Read more button */
 
-.company-read {
+.read-more {
   border: 2px solid;
   padding: 10px;
   border-radius: 50px;
@@ -502,7 +502,7 @@ body {
   font-family: "Roboto", sans-serif, Arial, Helvetica;
 }
 
-.company_read:hover {
+.read-more:hover {
   color: rgb(99, 131, 201);
   background-color: #ffffff;
 }
