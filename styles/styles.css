@@ -354,7 +354,7 @@ figure {
 
 /* Can add to emphasise which page is selected*/
 header ul .active-page a {
-  color: rgb(21, 53, 52);
+  color: rgb(99, 131, 201);
 }
 /* Styling for job description */
 .job-description {
