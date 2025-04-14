@@ -478,6 +478,18 @@ ul li {
   font-weight: 400;
 }
 
+body {
+  background-image: url("/styles/images/bg\ image.png");
+  background-size:cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  background-repeat: no-repeat;
+  
+}
+
+
+
 /* About Company Read more button */
 
 .company-read {
