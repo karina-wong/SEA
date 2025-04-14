@@ -431,6 +431,7 @@ h1.job-page-title {
   margin: 70px;
 }
 
+/* Image on home page (Source:https://www.freepik.com/free-photo/medium-shot-business-team-work_22892758.htm#fromView=search&page=1&position=4&uuid=22e3f5f9-8008-4d13-b8ec-b315e49e34cc&query=Corporate+group) */
 .home-pic {
   width: 100%;
   left: 50px;
@@ -478,7 +479,9 @@ ul li {
   font-weight: 400;
 }
 
-body {
+/* Background image (Source: https://stock.adobe.com/au/Library/urn:aaid:sc:AP:d43445cf-3b50-432b-b8df-f91d563b5fdd?asset_id=1006291114) */
+
+body { 
   background-image: url("/styles/images/background.jpeg");
   background-size:cover;
   background-position: center;
