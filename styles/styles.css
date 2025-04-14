@@ -479,10 +479,9 @@ ul li {
 }
 
 body {
-  background-image: url("/styles/images/bg\ image.png");
+  background-image: url("/styles/images/background.jpeg");
   background-size:cover;
   background-position: center;
-  height: 100vh;
   margin: 0;
   background-repeat: no-repeat;
   
