@@ -14,23 +14,11 @@
     <link href="styles/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <header>
-      <div class="nav-bar">
-        <div class="nav-logo">
-          <img src="images/Logo_idk.png" alt="SEA Company Logo" />
-        </div>
-        <div class="nav-links">
-          <nav class="menu about">
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">Group Details</a></li>
-              <li class="active-page"><a href="jobs.html">Job Positions</a></li>
-              <li><a href="apply.html">Apply</a></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+    
+  <?php
+  $page = "jobsPage";
+  include_once "nav.inc";
+?>
     <!-- The content below was created using GenAI. GenAI prompt:
   In the context of this company generate information for the following job decisions based on the following guidelines: Data analyst, Software developer Company’s position description reference number (5 alphanumeric characters)
 • Position title
