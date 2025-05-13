@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Application page for jobs at SEA" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="SEA, application, jobs," />
     <meta name="author" content="Nathan Nguyen" />
     <title>SEA application page</title>

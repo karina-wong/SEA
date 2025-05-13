@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="description" content="Homepage for SEA" />
     <meta name="keywords" content="SEA, application, jobs," />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Cee Chungyingruangrung" />
     <title>SEA</title>
     <!--Include statement for all stylesheet links-->
