@@ -5,4 +5,9 @@
       <p>Email: Queries@Softwareengineeringassociation.com.at</p>
       <p>Company HQ Address: Bikini Bottom, Atlantis, Unspacific ocean</p>
       <p>Trademark</p>
+     <a href="https://student-team-a3yg1sga.atlassian.net/jira/software/projects/SWTP/boards/2/backlog?epics=visible&atlOrigin=eyJpIjoiMzhkYTIxMWE4MzNmNDUzNWEyYmZiMmNlNzk1NmM5OWEiLCJwIjoiaiJ9"
+      target="_blank"
+     >
+      JIRA Project
+      </a>
     </footer>

@@ -95,6 +95,10 @@ footer h1 {
 footer h2 {
   font-size: 16px;
 }
+footer a{
+  color: #333 !important;
+  text-decoration: none;
+}
 
 /* For the Apply page */
 form {

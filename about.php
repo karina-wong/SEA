@@ -4,10 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Job description of for SEA company" />
     <meta name="keywords" content="SEA, about us, about, team members" />
+    <!--Helps scaling-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Karina Wong" />
     <!--Include statement for all stylesheet links-->
-    <?php include 'links.inc'; ?>
+    <?php include_once 'links.inc'; ?>
 
     <title>About Us Page</title>
   </head>
