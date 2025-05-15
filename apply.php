@@ -21,7 +21,8 @@
         <h1>Job Application Form</h1>
         <form
           method="post"
-          action="http://mercury.swin.edu.au/it000000/formtest.php"
+          action="process_eoi.php"
+          novalidate ="novalidate"
         >
           <p>
             <label for="reference_number">Reference Number: </label>

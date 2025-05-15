@@ -2,7 +2,7 @@
 $host = "localhost";         
 $user = "root";              
 $pwd = "";                   
-$sql_db = "trial_database";  
+$sql_db = "sea_db";  
 
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 
