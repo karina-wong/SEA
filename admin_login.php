@@ -18,6 +18,7 @@ $user = mysqli_fetch_assoc($result);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
   if ($user) {
+    $_SESSION['db_username'] = $username;
     $_SESSION['username'] = $user['username'];
     header("Location: profile.php");
     exit();
