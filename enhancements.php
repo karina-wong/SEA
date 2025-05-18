@@ -1,4 +1,6 @@
-  <?php
+
+<?php
+// Manager Registration
   $page = "managerPage";
   include_once "nav.inc";
 ?>
