@@ -12,7 +12,7 @@ $username = trim($_POST['username']);
 $password = trim($_POST['password']);
 
 // Simple query to check credentials
-$query = "SELECT * FROM admin_user WHERE username = '$username' AND passwords = '$password'";
+$query = "SELECT * FROM admin_users WHERE username = '$username' AND passwords = '$password'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
   if ($user) {
     $_SESSION['db_username'] = $username;
     $_SESSION['username'] = $user['username'];
-    header("Location: profile.php");
+    header("Location: manage.php");
     exit();
   } 
   $is_invalid = true;
