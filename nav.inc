@@ -14,6 +14,7 @@
               <li <?php echo ($page=="aboutPage")?"class='active-page'" : ""; ?>><a href="about.php" >Group Details</a></li>
               <li <?php echo ($page=="jobsPage")?"class='active-page'" : ""; ?>><a href="jobs.php"  >Job Positions</a></li>
               <li <?php echo ($page=="applyPage")?"class='active-page'" : ""; ?>><a href="apply.php" >Apply</a></li>
+              <li <?php echo ($page=="managerPage")?"class='active-page'" : ""; ?>><a href="enhancements.php" >Manager</a></li>
             </ul>
           </nav>
         </div>

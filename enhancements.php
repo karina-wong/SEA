@@ -1,3 +1,8 @@
+  <?php
+  $page = "managerPage";
+  include_once "nav.inc";
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
