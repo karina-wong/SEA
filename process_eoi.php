@@ -17,6 +17,18 @@ function clean_input($data) {
     return htmlspecialchars(stripslashes(trim($data)));
 }
 
+//To validate state post code
+$statePostcodeMap = [
+    'VIC' => ['3', '8'],
+    'NSW' => ['1', '2'],
+    'QLD' => ['4', '9'],
+    'SA'  => ['5'],
+    'WA'  => ['6'],
+    'TAS' => ['7'],
+    'NT'  => ['0'],
+    'ACT' => ['0']
+];
+
 // Retrieve and clean data
 $jobRef = clean_input($_POST["reference_number"]);
 $fname = clean_input($_POST["first_name"]);
@@ -45,7 +57,11 @@ if (!preg_match("/^[a-zA-Z]{1,20}$/", $fname)) $errors[] = "Invalid first name."
 if (!preg_match("/^[a-zA-Z]{1,20}$/", $lname)) $errors[] = "Invalid last name.";
 if (!DateTime::createFromFormat('Y-m-d', $dob)) $errors[] = "Invalid date format.";
 if (!in_array($state, ['VIC','NSW','QLD','NT','WA','SA','TAS','ACT'])) $errors[] = "Invalid state.";
-if (!preg_match("/^\d{4}$/", $postcode)) $errors[] = "Postcode must be 4 digits.";
+if (!preg_match("/^\d{4}$/", $postcode)) {
+    $errors[] = "Postcode must be exactly 4 digits.";
+} elseif (!isset($statePostcodeMap[$state]) || !in_array($postcode[0], $statePostcodeMap[$state])) {
+    $errors[] = "Postcode does not match the selected state.";
+}
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email.";
 if (!preg_match("/^[0-9 ]{8,12}$/", $phone)) $errors[] = "Invalid phone number.";
 
