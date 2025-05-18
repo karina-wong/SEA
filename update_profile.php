@@ -2,14 +2,11 @@
 session_start();
 require_once("settings.php");
 
-//i_love_web_development@swinburne.co
-//105750708@student.swin.edu.au
-
 $invalid_email = false;
 // database connection from ChatGPT
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_records'])) {
-    if ($_SESSION['username'] === "karina" && !empty($_POST['ids_to_delete'])) {
+    if (isset($_SESSION['username']) && in_array($_SESSION['username'], ["Karina", "Cee", "Nathan"])) && !empty($_POST['ids_to_delete']) {
         $ids = explode(',', $_POST['ids_to_delete']);
         $ids = array_filter(array_map('trim', $ids), 'is_numeric');
 
@@ -20,10 +17,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_records'])) {
             $stmt = $pdo->prepare("DELETE FROM records WHERE id IN ($placeholders)");
             $stmt->execute($ids);
 
-            echo "<div>✅ Deleted selected records.</div>";
+            echo '<div>✅ Deleted selected records.</div> <div?><a href="profile.php">Back to Applictaions</a></div>';
         } else {
             echo "<div>⚠️ Invalid ID format.</div>";
         }
+    }
+    else {
+        echo '<div>Please login first</div> <div><a href="admin_login.php">Login Page</a></div>';
     }
 }
 
