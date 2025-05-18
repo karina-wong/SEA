@@ -43,7 +43,7 @@ $errors = [];
 
 if (!preg_match("/^[a-zA-Z]{1,20}$/", $fname)) $errors[] = "Invalid first name.";
 if (!preg_match("/^[a-zA-Z]{1,20}$/", $lname)) $errors[] = "Invalid last name.";
-if (!DateTime::createFromFormat('d/m/Y', $dob)) $errors[] = "Invalid date format.";
+if (!DateTime::createFromFormat('Y-m-d', $dob)) $errors[] = "Invalid date format.";
 if (!in_array($state, ['VIC','NSW','QLD','NT','WA','SA','TAS','ACT'])) $errors[] = "Invalid state.";
 if (!preg_match("/^\d{4}$/", $postcode)) $errors[] = "Postcode must be 4 digits.";
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = "Invalid email.";
@@ -56,8 +56,6 @@ if (!empty($errors)) {
     exit();
 }
 
-// Convert DOB to MySQL format
-$dob_mysql = DateTime::createFromFormat('d/m/Y', $dob)->format('Y-m-d');
 
 // Create table if not exists
 $tableQuery = <<<SQL
@@ -91,7 +89,7 @@ $query = "INSERT INTO eoi (JobReferenceNumber, FirstName, LastName, DOB, Gender,
 VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = mysqli_prepare($conn, $query);
-mysqli_stmt_bind_param($stmt, "sssssssssssssssss", $jobRef, $fname, $lname, $dob_mysql, $gender, $street, $suburb, $state, $postcode, $email, $phone, $skill1, $skill2, $skill3, $skill4, $skill5, $otherSkills);
+mysqli_stmt_bind_param($stmt, "sssssssssssssssss", $jobRef, $fname, $lname, $dob, $gender, $street, $suburb, $state, $postcode, $email, $phone, $skill1, $skill2, $skill3, $skill4, $skill5, $otherSkills);
 
 if (mysqli_stmt_execute($stmt)) {
     $eoi_id = mysqli_insert_id($conn);
