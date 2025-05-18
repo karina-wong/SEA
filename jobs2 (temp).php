@@ -1,10 +1,5 @@
 <?php
-
-$host = "localhost";         
-$user = "root";              
-$pwd = "";                   
-$sql_db = "sea_db";  
-$conn = mysqli_connect($host, $user, $pwd, $sql_db);
+$mysqli = require __DIR__ . "/settings.php";
 
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
