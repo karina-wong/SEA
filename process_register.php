@@ -46,7 +46,14 @@ $stmt->bind_param("sss",
                     $_POST["email"],
                     $password_hash);
 
-$stmt->execute();
+if ($stmt->execute()) {
+    echo "Registration Successful";
+} else {
 
-echo "Registration Successful";
+    if ($mysqli->errno === 1062) {
+        die("email already taken");
+    } else {
+    die($mysqli->error . " " . $mysqli->errno);
+    }
+}
 ?>

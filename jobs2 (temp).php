@@ -49,13 +49,13 @@ programming languages required, number-of-years of experience required, etc..”
                 if ($result->num_rows > 0) {
                     while($row = $result->fetch_assoc()) {
                         echo "<section class='job'>";
-                        echo "<h2>" . $row['title'] . "</h2>";
+                        echo "<h2>" . $row['name'] . "</h2>";
                         echo "<h2>Reference Number: " . $row['id'] . "</h2>";
                         echo "<h3>Salary Range</h3>";
-                        echo "<p>" . $row['salary_range'] . "</p>";
+                        echo "<p>" . $row['salary'] . "</p>";
                         echo "<h3>Description</h3>";
                         echo "<p>" . $row['description'] . "</p>";
-                        echo "<h3>Reports To: " . $row['reports_to'] . "</h3>";
+                        echo "<h3>Reports To: " . $row['report_to'] . "</h3>";
                         echo "<h3>Key Responsibilities</h3>";
                         echo "<ul><li>" . str_replace(",", "</li><li>", $row['responsibilities']) . "</li></ul>";
                         echo "<h3>Required Qualifications, Skills, Knowledge, and Attributes:</h3>";
