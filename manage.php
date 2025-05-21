@@ -4,13 +4,13 @@ require_once("settings.php");
 
 $invalid_email = false;
 
-$query = "SELECT * FROM admin_users WHERE username = '$username' AND passwords = '$password'";
+$query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     if ($user) {
-      $_SESSION['username'] = $_SESSION['db_username'];
+      $_SESSION['email'] = $_SESSION['db_email'];
       header("Location: update.php");
       exit();
     } 
@@ -36,9 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 <body>
     <h1>Profile Page</h1>
 
-    <?php if (isset($_SESSION['username']) && $_SESSION['username'] = $_SESSION['db_username']): ?>
+    <?php if (isset($_SESSION['username']) && $_SESSION['email'] = $_SESSION['db_email']): ?>
 
-        <div>Welcome, <?=htmlspecialchars($_SESSION['username']) ?> </div>
+        <div>Welcome, <?=htmlspecialchars($_SESSION['name']) ?> </div>
         <h3>Delete Records from Submissions</h3>
 
 <?php if (!empty($message)) echo "<p>$message</p>"; ?>

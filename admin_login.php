@@ -8,18 +8,21 @@ $is_invalid = false;
 
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 // Get user input
-$username = trim($_POST['username']);
+$email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
-// Simple query to check credentials
-$query = "SELECT * FROM admin_users WHERE username = '$username' AND passwords = '$password'";
+
+// Simple query to check credentials, gets all info based on email
+$query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
+
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
-  if ($user) {
-    $_SESSION['db_username'] = $username;
-    $_SESSION['username'] = $user['username'];
+  if ($user && password_verify($password, $user['password_hash'])) {
+    $_SESSION['db_email'] = $email;
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['name'] = $user['name'];
     header("Location: manage.php");
     exit();
   } 
@@ -44,8 +47,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
     <form method="post">
         <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username">
+            <label for="username">Email</label>
+            <input type="text" name="email" id="email">
         </div>
         <div>
             <label for="password">Password</label>
