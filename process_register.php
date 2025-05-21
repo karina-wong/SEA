@@ -2,7 +2,7 @@
 $host = "localhost";         
 $user = "root";              
 $pwd = "";                   
-$sql_db = "sea_db"; 
+$sql_db = "sea_db";
 
 if (empty($_POST["name"])) {
     die("Name is required");
