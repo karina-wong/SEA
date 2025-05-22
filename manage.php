@@ -58,9 +58,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 <?php include("table_head.inc"); ?>
                 <tbody>
                     <?php
-                    $stmt = $pdo->query("SELECT * FROM eoi");
-                    $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+                    $query = "SELECT * FROM eoi";
+                    $result = mysqli_query($conn, $query);
+                    
+                    if ($result && mysqli_num_rows($result) > 0):
+                        while ($row = mysqli_fetch_assoc($result)):
+                            include("result_table.inc");
+                        endwhile;
+                    else:
+                        echo "<tr><td colspan='3'>No records found.</td></tr>";
+                    endif;
+                    
                     if ($records):
                         foreach ($records as $row):
                     
