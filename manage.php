@@ -2,9 +2,12 @@
 session_start();
 require_once("settings.php");
 
+$is_invalid = false;
 $invalid_email = false;
 $position_search = false;
 $application_search = false;
+
+$email = $_SESSION['db_email'];
 
 $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
@@ -43,12 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 <body>
     <h1>Profile Page</h1>
 
-    <?php if (isset($_SESSION['username']) && $_SESSION['email'] == $_SESSION['db_email']): ?>
+    <?php if ($_SESSION['email'] == $_SESSION['db_email']): ?>
 
         <div>Welcome, <?=htmlspecialchars($_SESSION['name']) ?> </div>
         <h3>Delete Records from Submissions</h3>
 
-<?php if (!empty($message)) echo "<p>$message</p>"; ?>
+    <?php if (!empty($message)) echo "<p>$message</p>"; ?>
 
         <form method="post">
             <table>
