@@ -3,20 +3,27 @@ session_start();
 require_once("settings.php");
 
 $invalid_email = false;
+$position_search = false;
+$application_search = false;
 
 $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
-    if ($user) {
+    if ($user && $_POST['form_id'] === 'total_delete') {
       $_SESSION['email'] = $_SESSION['db_email'];
       header("Location: update.php");
       exit();
     } 
     $is_invalid = true;
   }
-
+  if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'position_search'){
+      $position_search = true;
+  }
+  if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'application_search'){
+    $application_search = true;
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 <body>
     <h1>Profile Page</h1>
 
-    <?php if (isset($_SESSION['username']) && $_SESSION['email'] = $_SESSION['db_email']): ?>
+    <?php if (isset($_SESSION['username']) && $_SESSION['email'] == $_SESSION['db_email']): ?>
 
         <div>Welcome, <?=htmlspecialchars($_SESSION['name']) ?> </div>
         <h3>Delete Records from Submissions</h3>
@@ -45,25 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
         <form method="post">
             <table>
-                <thead>
-                    <tr>
-                        <th>Select</th>
-                        <th>EOInumber</th>
-                        <th>Reference No.</th> 
-                        <th>First name</th>
-                        <th>Last name</th>
-                        <th>DOB</th>
-                        <th>Gender</th>
-                        <th>Street Address</th>
-                        <th>Suburb</th>
-                        <th>State</th>
-                        <th>Postcode</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Skills</th>
-                        <th>ENUM</th>
-                    </tr>
-                </thead>
+                <?php include("table_head.inc"); ?>
                 <tbody>
                     <?php
                     $stmt = $pdo->query("SELECT * FROM eoi");
@@ -71,33 +60,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
                     if ($records):
                         foreach ($records as $row):
-                    ?>
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="delete_ids[]" value="<?= htmlspecialchars($row['id']) ?>">
-                            </td>
-                            <td><?= htmlspecialchars($row['EOInumber']) ?></td>
-                            <td><?= htmlspecialchars($row['JobReferenceNumber']) ?></td>
-                            <td><?= htmlspecialchars($row['FirstName']) ?></td>
-                            <td><?= htmlspecialchars($row['LastName']) ?></td>
-                            <td><?= htmlspecialchars($row['DOB']) ?></td>
-                            <td><?= htmlspecialchars($row['Gender']) ?></td>
-                            <td><?= htmlspecialchars($row['StreetAddress']) ?></td>
-                            <td><?= htmlspecialchars($row['Suburb']) ?></td>
-                            <td><?= htmlspecialchars($row['State']) ?></td>
-                            <td><?= htmlspecialchars($row['Postcode']) ?></td>
-                            <td><?= htmlspecialchars($row['Email']) ?></td>
-                            <td><?= htmlspecialchars($row['Phone']) ?></td>
-                            <td><?= htmlspecialchars($row['Skill1']) ?>,
-                            <?= htmlspecialchars($row['Skill2']) ?>,
-                            <?= htmlspecialchars($row['Skill3']) ?>
-                            <?= htmlspecialchars($row['Skill4']) ?>
-                            <?= htmlspecialchars($row['Skill5']) ?>
-                            <?= htmlspecialchars($row['OtherSkills']) ?>
-                            </td>
-                            <td><?= htmlspecialchars($row['ENUM']) ?></td>
-                        </tr>
-                    <?php
+                    
+                        include("result_table.inc");
+                    
                         endforeach;
                     else:
                     ?>
@@ -105,10 +70,74 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                     <?php endif; ?>
                 </tbody>
             </table>
+            <input type="hidden" name="form_id" value="total_delete">
             <button type="submit" method="post"  name="delete_records">Delete Selected</button>
         </form>
-        
+        <div>
+            <h4>Search for Position</h4>
+            <form method="get" action="">
+                <input type="text" name="position_search" id="position_search">
+                <input type="submit" value="Search">
+            <input type="hidden" name="form_id" value="position_search">
+            </form>
+            <?php 
+            if ($position_search): 
+                if (isset($_GET['position_search'])) {
+                    $applicants = mysqli_real_escape_string($conn, $_GET['position_search']);
+                    $sql = "SELECT * FROM eoi WHERE JobReferenceNumber LIKE '%$applicants%'";
+                    $result = mysqli_query($conn, $sql);
+                
+                    if (mysqli_num_rows($result) > 0) {
+                        echo "<table>";
+                        include("table_head.inc");
+                        echo "<tbody>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            include("result_table.inc");
+                        }
+                        echo "</tbody>";
+                        echo "</table>";
+                    } else {
+                        echo "<p>🚫 No matching Applicants found.</p>";
+                    }
+                } else {
+                    echo "<p>Please enter a position to search.</p>";
+                }
+             endif; 
+             ?>
+            <h4>Search for Applicant</h4>
+            <form action="" method="get">
+            <input type="text" name="application_search" id="application_search">
+            <input type="submit" value="Search">
+            <input type="hidden" name="form_id" value="application_search">
+            </form>
+            
+            <?php if ($application_search): 
+                if (isset($_GET['application_search'])) {
+                    $applicants = mysqli_real_escape_string($conn, $_GET['application_search']);
+                    $sql = "SELECT * FROM eoi WHERE FirstName LIKE '%$applicants%' OR LastName LIKE '%$applicants%'";
+                    //should have fields for first/last name??
+                    $result = mysqli_query($conn, $sql);
+                
+                    if (mysqli_num_rows($result) > 0) {
+                        echo "<table>";
+                        include("table_head.inc");
+                        echo "<tbody>";
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            include("result_table.inc");
+                        }
+                        echo "</tbody>";
+                        echo "</table>";
+                    } else {
+                        echo "<p>🚫 No matching Applicants found.</p>";
+                    }
+                } else {
+                    echo "<p>Please enter a position to search.</p>";
+                }
+             endif; 
+             ?>
+        </div>
             <div><a href="logout.php">Log out</a></div>
+
  <?php else: ?>
      <div>Please login first</div>
     <div><a href="admin_login.php">Login Page</a></div>
