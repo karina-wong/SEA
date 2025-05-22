@@ -66,7 +66,7 @@ programming languages required, number-of-years of experience required, etc..”
                 } else {
                     echo "<p>No jobs available.</p>";
                 }
-                $conn->close();
+                $mysqli->close();
                 ?>
         </div>
         <aside class="how-to">
