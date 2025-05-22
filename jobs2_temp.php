@@ -1,12 +1,12 @@
 <?php
 $mysqli = require __DIR__ . "/settings.php";
 
-if (!$conn) {
+if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
 $sql = "SELECT * FROM jobs ORDER BY name DESC";
-$result = $conn->query($sql);
+$result = $mysqli->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ programming languages required, number-of-years of experience required, etc..”
                     while($row = $result->fetch_assoc()) {
                         echo "<section class='job'>";
                         echo "<h2>" . $row['name'] . "</h2>";
-                        echo "<h2>Reference Number: " . $row['id'] . "</h2>";
+                        echo "<h2>Reference Number: " . $row['refnum'] . "</h2>";
                         echo "<h3>Salary Range</h3>";
                         echo "<p>" . $row['salary'] . "</p>";
                         echo "<h3>Description</h3>";
