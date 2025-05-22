@@ -20,9 +20,10 @@ $user = mysqli_fetch_assoc($result);
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
   if ($user && password_verify($password, $user['password_hash'])) {
-    $_SESSION['db_email'] = $email;
-    $_SESSION['email'] = $user['email'];
+    $_SESSION['email'] = $email;
+    $_SESSION['db_email'] = $user['email'];
     $_SESSION['name'] = $user['name'];
+    
     header("Location: manage.php");
     exit();
   } 
