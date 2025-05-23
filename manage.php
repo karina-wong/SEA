@@ -12,6 +12,27 @@ $email = $_SESSION['db_email'];
 $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
+    
+// Handle job deletion
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_job_id'])) {
+    $ref = mysqli_real_escape_string($conn, $_POST['delete_job_id']);
+    mysqli_query($conn, "DELETE FROM jobs WHERE refnum = '$ref'");
+}
+
+// Handle job insertion
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_job'])) {
+    $ref = mysqli_real_escape_string($conn, $_POST['new_refnum']);
+    $title = mysqli_real_escape_string($conn, $_POST['new_title']);
+    $salary = mysqli_real_escape_string($conn, $_POST['new_salary']);
+    $desc = mysqli_real_escape_string($conn, $_POST['new_description']);
+    $report = mysqli_real_escape_string($conn, $_POST['new_report_to']);
+    $resps = mysqli_real_escape_string($conn, $_POST['new_responsibilities']);
+       $ess = mysqli_real_escape_string($conn, $_POST['new_essential']);
+    $pref = mysqli_real_escape_string($conn, $_POST['new_preferable']);
+
+    mysqli_query($conn, "INSERT INTO jobs (refnum, name, salary, description, report_to, responsibilities, essential, preferable)
+        VALUES ('$ref', '$title', '$salary', '$desc', '$report', '$resps', '$ess', '$pref')");
+}
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     if ($user && $_POST['form_id'] === 'total_delete') {
@@ -26,8 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
   }
   if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'application_search'){
     $application_search = true;
+
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -146,6 +169,54 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 }
              endif; 
              ?>
+        </div>
+
+        <div>
+        <hr>
+        <h3>Manage Job Listings</h3>
+        <!-- Display for Existing Jobs -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Reference</th>
+                    <th>Title</th>
+                    <th>Salary</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $jobs_result = mysqli_query($conn, "SELECT * FROM jobs");
+                while ($job = mysqli_fetch_assoc($jobs_result)):
+                ?>
+                <tr>
+                    <td><?= htmlspecialchars($job['refnum']) ?></td>
+                    <td><?= htmlspecialchars($job['name']) ?></td>
+                    <td><?= htmlspecialchars($job['salary']) ?></td>
+                    <td>
+                        <form method="post" style="display:inline;">
+                            <input type="hidden" name="delete_job_id" value="<?= $job['refnum'] ?>">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                <?php endwhile; ?>
+            </tbody>
+        </table>
+
+        <!-- Add New Job stuff-->
+        <h4>Add New Job</h4>
+        <form method="post">
+            <label>Ref Number: <input type="text" name="new_refnum" required></label><br>
+            <label>Title: <input type="text" name="new_title" required></label><br>
+            <label>Salary: <input type="text" name="new_salary" required></label><br>
+            <label>Description:<br><textarea name="new_description" rows="4" required></textarea></label><br>
+            <label>Reports To: <input type="text" name="new_report_to" required></label><br>
+            <label>Responsibilities (Use // between points):<br><textarea name="new_responsibilities" required></textarea></label><br>
+            <label>Essential (Use // between points):<br><textarea name="new_essential" required></textarea></label><br>
+            <label>Preferable (Use // between points):<br><textarea name="new_preferable" required></textarea></label><br>
+            <button type="submit" name="add_job">Add Job</button>
+        </form>
         </div>
             <div><a href="logout.php">Log out</a></div>
 
