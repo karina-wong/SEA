@@ -218,6 +218,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             <button type="submit" name="add_job">Add Job</button>
         </form>
         </div>
+        <div>
+            <form action="signup.php" method="get">
+                <button type="submit">Register a Manager</button>
+            </form>
+        </div>
             <div><a href="logout.php">Log out</a></div>
 
  <?php else: ?>
