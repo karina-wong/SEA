@@ -13,6 +13,7 @@
   </head>
   <body>
   <?php
+  require_once("settings.php");
   $page = "applyPage";
   include_once "nav.inc";
 ?>
@@ -27,10 +28,13 @@
           <p>
             <label for="reference_number">Reference Number: </label>
             <select name="reference_number" id="reference_number">
-              <option value="">Please Select</option>
-              <option value="job1">Data analyst - DA102</option>
-              <option value="job2">Software dev - SD309</option>
-              <option value="other">Other</option>
+            <option value= "nill"> Please Select </option>
+            <?php
+              $result = mysqli_query($conn, "SELECT refnum, name FROM jobs");
+              while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<option value='{$row['refnum']}'>{$row['name']} ({$row['refnum']})</option>";
+              }
+              ?>
             </select>
           </p>
           <p>

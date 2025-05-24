@@ -1,12 +1,12 @@
 <?php
 $mysqli = require __DIR__ . "/settings.php";
 
-if (!$conn) {
+if (!$mysqli) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
 $sql = "SELECT * FROM jobs ORDER BY name DESC";
-$result = $conn->query($sql);
+$result = $mysqli->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -50,23 +50,23 @@ programming languages required, number-of-years of experience required, etc..”
                     while($row = $result->fetch_assoc()) {
                         echo "<section class='job'>";
                         echo "<h2>" . $row['name'] . "</h2>";
-                        echo "<h2>Reference Number: " . $row['id'] . "</h2>";
+                        echo "<h2>Reference Number: " . $row['refnum'] . "</h2>";
                         echo "<h3>Salary Range</h3>";
                         echo "<p>" . $row['salary'] . "</p>";
                         echo "<h3>Description</h3>";
                         echo "<p>" . $row['description'] . "</p>";
                         echo "<h3>Reports To: " . $row['report_to'] . "</h3>";
                         echo "<h3>Key Responsibilities</h3>";
-                        echo "<ul><li>" . str_replace(",", "</li><li>", $row['responsibilities']) . "</li></ul>";
+                        echo "<ul><li>" . str_replace("//", "</li><li>", $row['responsibilities']) . "</li></ul>";
                         echo "<h3>Required Qualifications, Skills, Knowledge, and Attributes:</h3>";
-                        echo "<h4>Essential:</h4><ul><li>" . str_replace(",", "</li><li>", $row['essential']) . "</li></ul>";
-                        echo "<h4>Preferable:</h4><ul><li>" . str_replace(",", "</li><li>", $row['preferable']) . "</li></ul>";
+                        echo "<h4>Essential:</h4><ul><li>" . str_replace("//", "</li><li>", $row['essential']) . "</li></ul>";
+                        echo "<h4>Preferable:</h4><ul><li>" . str_replace("//", "</li><li>", $row['preferable']) . "</li></ul>";
                         echo "</section><hr />";
                     }
                 } else {
                     echo "<p>No jobs available.</p>";
                 }
-                $conn->close();
+                $mysqli->close();
                 ?>
         </div>
         <aside class="how-to">
