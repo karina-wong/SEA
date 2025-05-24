@@ -7,7 +7,7 @@ $invalid_email = false;
 $position_search = false;
 $application_search = false;
 
-$email = $_SESSION['db_email'];
+$_SESSION['db_email']; = $email;
 
 $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
@@ -46,9 +46,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 <body>
     <h1>Profile Page</h1>
 
-    <?php if ($_SESSION['email'] == $_SESSION['db_email']): ?>
+    <?php if ($_SESSION['email'] == $_SESSION['db_email']): //issues?> 
 
-        <div>Welcome, <?=htmlspecialchars($_SESSION['name']) ?> </div>
+        <div>Welcome, <?=htmlspecialchars($_SESSION['name']) //isues ?> </div>
         <h3>Delete Records from Submissions</h3>
 
     <?php if (!empty($message)) echo "<p>$message</p>"; ?>
