@@ -1,66 +1,77 @@
 <?php
-session_start();
-require_once("settings.php");
+    session_start();
+    require_once("settings.php");
 
-//Variables passed in from prior = email, pwd & db-email
+    //Variables passed in from prior = email, pwd & db-email
 
-$is_invalid = false;
-$invalid_email = false;
-$position_search = false;
-$application_search = false;
+    $is_invalid = false;
+    $invalid_email = false;
+    $position_search = false;
+    $application_search = false;
+    $invalid_status_query = false;
 
-$email = $_SESSION['email']; //so it can be used w/in the $query
-$password = $_SESSION['password']; //so it can be used to validate
+    $email = $_SESSION['email']; //so it can be used w/in the $query
+    $password = $_SESSION['password']; //so it can be used to validate
 
-$query = "SELECT * FROM manager WHERE email = '$email'";
-$result = mysqli_query($conn, $query);
-$user = mysqli_fetch_assoc($result);
+    $query = "SELECT * FROM manager WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
+    $user = mysqli_fetch_assoc($result);
 
-//Validates email & password, so even if they get one right & get to this page via URL still won't be logged in
-if (isset($email, $password)){
-    $stmt = $conn->prepare("SELECT * FROM manager WHERE email = ?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
-}
+    //Validates email & password, so even if they get one right & get to this page via URL still won't be logged in
+    if (isset($email, $password)){
+        $stmt = $conn->prepare("SELECT * FROM manager WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+    }
 
-// Handle job deletion
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_job_id'])) {
-    $ref = mysqli_real_escape_string($conn, $_POST['delete_job_id']);
-    mysqli_query($conn, "DELETE FROM jobs WHERE refnum = '$ref'");
-}
+    // Handle job deletion
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_job_id'])) {
+        $ref = mysqli_real_escape_string($conn, $_POST['delete_job_id']);
+        mysqli_query($conn, "DELETE FROM jobs WHERE refnum = '$ref'");
+    }
 
-// Handle job insertion
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_job'])) {
-    $ref = mysqli_real_escape_string($conn, $_POST['new_refnum']);
-    $title = mysqli_real_escape_string($conn, $_POST['new_title']);
-    $salary = mysqli_real_escape_string($conn, $_POST['new_salary']);
-    $desc = mysqli_real_escape_string($conn, $_POST['new_description']);
-    $report = mysqli_real_escape_string($conn, $_POST['new_report_to']);
-    $resps = mysqli_real_escape_string($conn, $_POST['new_responsibilities']);
-       $ess = mysqli_real_escape_string($conn, $_POST['new_essential']);
-    $pref = mysqli_real_escape_string($conn, $_POST['new_preferable']);
+    // Handle job insertion
+    if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_job'])) {
+        $ref = mysqli_real_escape_string($conn, $_POST['new_refnum']);
+        $title = mysqli_real_escape_string($conn, $_POST['new_title']);
+        $salary = mysqli_real_escape_string($conn, $_POST['new_salary']);
+        $desc = mysqli_real_escape_string($conn, $_POST['new_description']);
+        $report = mysqli_real_escape_string($conn, $_POST['new_report_to']);
+        $resps = mysqli_real_escape_string($conn, $_POST['new_responsibilities']);
+        $ess = mysqli_real_escape_string($conn, $_POST['new_essential']);
+        $pref = mysqli_real_escape_string($conn, $_POST['new_preferable']);
 
-    mysqli_query($conn, "INSERT INTO jobs (refnum, name, salary, description, report_to, responsibilities, essential, preferable)
-        VALUES ('$ref', '$title', '$salary', '$desc', '$report', '$resps', '$ess', '$pref')");
-}
+        mysqli_query($conn, "INSERT INTO jobs (refnum, name, salary, description, report_to, responsibilities, essential, preferable)
+            VALUES ('$ref', '$title', '$salary', '$desc', '$report', '$resps', '$ess', '$pref')");
+    }
 
-if ($_SERVER["REQUEST_METHOD"] === "POST"){
-    if ($user && $_POST['form_id'] === 'total_delete') {
-        $_SESSION['delete_ids'] = $_POST['delete_ids'];
-        header("Location: update.php");
-        exit();
-    } 
-    $is_invalid = true;
-  }
-  if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'position_search'){
-      $position_search = true;
-  }
-  if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'application_search'){
-    $application_search = true;
-
-}
+    if ($_SERVER["REQUEST_METHOD"] === "POST"){
+        if ($user && $_POST['form_id'] === 'total_delete'){
+            if (isset($_POST['delete_button'])){
+                $_SESSION['delete_ids'] = $_POST['delete_ids'];
+                $_SESSION['update'] = "delete";
+                header("Location: update.php");
+                exit();   
+            }
+            if (isset($_POST['status_button'])){
+                $_SESSION['change_ids'] = $_POST['delete_ids'];
+                $_SESSION['status_selected'] = $_POST["status"];
+                $_SESSION['update'] = "status";
+                header("Location: update.php");
+                exit();  
+            }
+            
+        } 
+        $is_invalid = true;
+    }
+    if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'position_search'){
+        $position_search = true;
+    }
+    if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'application_search'){
+        $application_search = true;
+    }
 ?>
 
 
@@ -75,7 +86,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     display: block;
     overflow-x: auto;
     white-space: nowrap;
-}
+    }
+
+    .buttons {
+        display: flex;
+    }
+
+    .checkbox_applicants{
+        position: sticky;
+        left: 0;
+        background: rgba(32, 43, 56, 0.7);
+        border-radius: 4px; 
+        z-index: 2;
+
+    }
 </style>
 </head>
 <body>
@@ -107,7 +131,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 </tbody>
             </table>
             <input type="hidden" name="form_id" value="total_delete">
-            <input type="submit" value="Delete Selected">
+            <div class="buttons">
+               <input type="submit" name="delete_button" value="Delete Selected">
+                <select name="status" id="select-status">
+                    <option value="">Status change selection</option>
+                    <option value="new">New</option>
+                    <option value="current">Current</option>
+                    <option value="final">Final</option>
+                </select>
+                <input type="submit" name="status_button" value="Change Status"> 
+            </div>
+            
         </form>
         <?php if ($is_invalid): ?>
             <p>❌ Cannot Delete Record</p>  
@@ -147,6 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             <input type="text" name="application_search" id="application_search">
             <input type="submit" value="Search">
             <input type="hidden" name="form_id" value="application_search">
+           
             </form>
             
             <?php if ($application_search): 
