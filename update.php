@@ -1,10 +1,6 @@
 <?php
     session_start();
     require_once("settings.php");
-//delete below later only for trouble shooting
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
 
     $invalid_email = false;
     

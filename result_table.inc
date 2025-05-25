@@ -21,5 +21,5 @@
     <?= htmlspecialchars($row['Skill5']) ?>
     <?= htmlspecialchars($row['OtherSkills']) ?>
     </td>
-    <td><?= htmlspecialchars($row['ENUM']) ?></td>
+    <td><?= htmlspecialchars($row['Status']) ?></td>
 </tr>
