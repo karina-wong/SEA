@@ -1,6 +1,6 @@
 <thead>
     <tr>
-        <th>Select</th>
+        <th class="checkbox_applicants">Select</th>
         <th>EOInumber</th>
         <th>Reference No.</th> 
         <th>First name</th>
