@@ -3,6 +3,9 @@
 
 session_start();
 require_once("settings.php");
+$page = "adminloginPage";
+include_once "nav.inc";
+
 
 $is_invalid = false;
 

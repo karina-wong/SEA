@@ -3,19 +3,18 @@
 <html>
     <head>
         <title>Manager Registration</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Job description of for SEA company" />
     
-    <?php include 'links.inc'; ?>
+ 
 </head>
 <body>
 <?php
   // Manager Registration
-  $page = "managerPage";
-  include_once "nav.inc";
+
 ?>
     <h1>Manager Registration</h1>
 
@@ -39,6 +38,12 @@
 
         <button>Register</button>
     </form>
+        <div>
+            <form action="manage.php" method="get">
+                <button type="submit">Return to Manage</button>
+            </form>
+        </div>
+
 
 </body>
 </html>
