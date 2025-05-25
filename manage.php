@@ -48,8 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_job'])) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     if ($user && $_POST['form_id'] === 'total_delete') {
-      header("Location: update.php");
-      exit();
+        $_SESSION['delete_ids'] = $_POST['delete_ids'];
+        header("Location: update.php");
+        exit();
     } 
     $is_invalid = true;
   }
@@ -106,7 +107,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 </tbody>
             </table>
             <input type="hidden" name="form_id" value="total_delete">
-            <button type="submit" method="post"  name="delete_records">Delete Selected</button>
+            <input type="submit" value="Delete Selected">
         </form>
         <?php if ($is_invalid): ?>
             <p>❌ Cannot Delete Record</p>  
