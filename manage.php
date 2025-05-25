@@ -2,12 +2,15 @@
 session_start();
 require_once("settings.php");
 
+//Variables passed in from prior = email, pwd & db-email
+
 $is_invalid = false;
 $invalid_email = false;
 $position_search = false;
 $application_search = false;
 
-$_SESSION['db_email']; = $email;
+$email = $_SESSION['email']; //so it can be used w/in the $query
+$password = $_SESSION['password']; //so it can be used to validate
 
 $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
@@ -17,6 +20,13 @@ $user = mysqli_fetch_assoc($result);
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_job_id'])) {
     $ref = mysqli_real_escape_string($conn, $_POST['delete_job_id']);
     mysqli_query($conn, "DELETE FROM jobs WHERE refnum = '$ref'");
+}
+if (isset($email, $password)){
+    $stmt = $conn->prepare("SELECT * FROM manager WHERE email = ?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 }
 
 // Handle job insertion
@@ -69,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 <body>
     <h1>Profile Page</h1>
 
-    <?php if ($_SESSION['email'] == $_SESSION['db_email']): //issues?> 
+    <?php if ($user && password_verify($password, $user['password_hash'])): //changed to run validation again?> 
 
         <div>Welcome, <?=htmlspecialchars($_SESSION['name']) //isues ?> </div>
         <h3>Delete Records from Submissions</h3>
@@ -114,8 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 <input type="submit" value="Search">
             <input type="hidden" name="form_id" value="position_search">
             </form>
-            <?php 
-            if ($position_search): 
+            <?php if ($position_search): 
                 if (isset($_GET['position_search'])) {
                     $applicants = mysqli_real_escape_string($conn, $_GET['position_search']);
                     $sql = "SELECT * FROM eoi WHERE JobReferenceNumber LIKE '%$applicants%'";
@@ -174,7 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         <div>
         <hr>
         <h3>Manage Job Listings</h3>
-        <!-- Display for Existing Jobs -->
+        <!-- Display for Existing Jobs ?? -->
         <table>
             <thead>
                 <tr>
@@ -236,3 +245,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
 
 </body>
 </html>
+<!--- ABCD1234 karina@gmail.com (test log in)!>

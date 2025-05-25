@@ -8,7 +8,7 @@ $is_invalid = false;
 
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 // Get user input
-$email = trim($_POST['email']);
+$email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
 $password = trim($_POST['password']);
 
 
@@ -17,17 +17,29 @@ $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
 
+//Checks if it is posted first
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+    $password = trim($_POST['password']);
 
-if ($_SERVER["REQUEST_METHOD"] === "POST"){
-  if ($user && password_verify($password, $user['password_hash'])) {
-    $_SESSION['email'] = $email;
-    $_SESSION['db_email'] = $user['email'];
-    $_SESSION['name'] = $user['name'];
-    
-    header("Location: manage.php");
-    exit();
-  } 
-  $is_invalid = true;
+    if ($email && $password) {
+        $stmt = $conn->prepare("SELECT * FROM manager WHERE email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $user = $result->fetch_assoc();
+
+        if ($user && password_verify($password, $user['password_hash'])) {
+            $_SESSION['email'] = $email;
+            $_SESSION['password'] = $password;
+            $_SESSION['name'] = $user['name'];
+
+            header("Location: manage.php");
+            exit();
+        }
+    }
+
+    $is_invalid = true;
 }
 
 
