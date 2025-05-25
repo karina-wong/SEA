@@ -3,11 +3,12 @@
 <html>
     <head>
         <title>Manager Registration</title>
-        <meta charset="UTF-8">
-       
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.min.css">
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Job description of for SEA company" />
+    
     <?php include 'links.inc'; ?>
 </head>
 <body>
