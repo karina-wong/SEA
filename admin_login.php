@@ -73,6 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <button>Login</button>
        
     </form>
-    
+    <div>Please use email: admin@gmail.com and pwd: ABCD12345678 to access for testing</div>
+
 </body>
 </html>
