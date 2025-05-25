@@ -15,18 +15,20 @@ $password = $_SESSION['password']; //so it can be used to validate
 $query = "SELECT * FROM manager WHERE email = '$email'";
 $result = mysqli_query($conn, $query);
 $user = mysqli_fetch_assoc($result);
-    
-// Handle job deletion
-if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_job_id'])) {
-    $ref = mysqli_real_escape_string($conn, $_POST['delete_job_id']);
-    mysqli_query($conn, "DELETE FROM jobs WHERE refnum = '$ref'");
-}
+
+//Validates email & password, so even if they get one right & get to this page via URL still won't be logged in
 if (isset($email, $password)){
     $stmt = $conn->prepare("SELECT * FROM manager WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $result = $stmt->get_result();
     $user = $result->fetch_assoc();
+}
+
+// Handle job deletion
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['delete_job_id'])) {
+    $ref = mysqli_real_escape_string($conn, $_POST['delete_job_id']);
+    mysqli_query($conn, "DELETE FROM jobs WHERE refnum = '$ref'");
 }
 
 // Handle job insertion
@@ -46,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['add_job'])) {
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"){
     if ($user && $_POST['form_id'] === 'total_delete') {
-      $_SESSION['email'] = $_SESSION['db_email'];
       header("Location: update.php");
       exit();
     } 
@@ -90,10 +91,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             <table>
                 <?php include("table_head.inc"); ?>
                 <tbody>
-                    <?php
+                <?php
                     $query = "SELECT * FROM eoi";
                     $result = mysqli_query($conn, $query);
-                    
+
                     if ($result && mysqli_num_rows($result) > 0):
                         while ($row = mysqli_fetch_assoc($result)):
                             include("result_table.inc");
@@ -101,22 +102,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                     else:
                         echo "<tr><td colspan='3'>No records found.</td></tr>";
                     endif;
-                    
-                    if ($records):
-                        foreach ($records as $row):
-                    
-                        include("result_table.inc");
-                    
-                        endforeach;
-                    else:
-                    ?>
-                        <tr><td colspan="3">No records found.</td></tr>
-                    <?php endif; ?>
+                ?>
                 </tbody>
             </table>
             <input type="hidden" name="form_id" value="total_delete">
             <button type="submit" method="post"  name="delete_records">Delete Selected</button>
         </form>
+        <?php if ($is_invalid): ?>
+            <p>❌ Cannot Delete Record</p>  
+        <?php endif; ?>
         <div>
             <h4>Search for Position</h4>
             <form method="get" action="">
@@ -228,7 +222,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
         </form>
         </div>
         <div>
-            <form action="signup.php" method="get">
+            <form action="signup.php" method="get"> <!-- goes to signup.php which is manager registration??-->
                 <button type="submit">Register a Manager</button>
             </form>
         </div>
@@ -239,9 +233,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     <div><a href="admin_login.php">Login Page</a></div>
 <?php endif; ?>
 
-<?php if ($is_invalid): ?>
-    <p>❌ Cannot Delete Record</p>  
-<?php endif; ?>
 
 </body>
 </html>

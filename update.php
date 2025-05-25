@@ -4,6 +4,7 @@ require_once("settings.php");
 
 $invalid_email = false;
 // database connection from ChatGPT
+//Handling deletions on another page makes it more easy to read??
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_records'])) {
     if (isset($_SESSION['username']) && in_array($_SESSION['username'], ["Karina", "Cee", "Nathan"])) && !empty($_POST['ids_to_delete']) {
