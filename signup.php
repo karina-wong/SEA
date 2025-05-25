@@ -1,17 +1,21 @@
 
-<?php
-// Manager Registration
-  $page = "managerPage";
-  include_once "nav.inc";
-?>
-
 <!DOCTYPE html>
 <html>
     <head>
         <title>Manager Registration</title>
         <meta charset="UTF-8">
+       
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Job description of for SEA company" />
+    <?php include 'links.inc'; ?>
 </head>
 <body>
+<?php
+  // Manager Registration
+  $page = "managerPage";
+  include_once "nav.inc";
+?>
     <h1>Manager Registration</h1>
 
     <form action="process_register.php" method="POST" id="register" novalidate>

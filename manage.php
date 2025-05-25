@@ -149,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
                 if (isset($_GET['application_search'])) {
                     $applicants = mysqli_real_escape_string($conn, $_GET['application_search']);
                     $sql = "SELECT * FROM eoi WHERE FirstName LIKE '%$applicants%' OR LastName LIKE '%$applicants%'";
-                    //should have fields for first/last name??
+                    //should have fields for first/last name?? A bit redundant???
                     $result = mysqli_query($conn, $sql);
                 
                     if (mysqli_num_rows($result) > 0) {
