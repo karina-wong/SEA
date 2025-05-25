@@ -11,7 +11,7 @@ $is_invalid = false;
 
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
 // Get user input
-$email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+$email = trim($_POST['email']);
 $password = trim($_POST['password']);
 
 
@@ -22,7 +22,7 @@ $user = mysqli_fetch_assoc($result);
 
 //Checks if it is posted first
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
+    $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
     if ($email && $password) {

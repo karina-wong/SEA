@@ -152,6 +152,16 @@
                 <input type="text" name="position_search" id="position_search">
                 <input type="submit" value="Search">
             <input type="hidden" name="form_id" value="position_search">
+            <div class="buttons">
+               <input type="submit" name="delete_button" value="Delete Selected">
+                <select name="status" id="select-status">
+                    <option value="">Status change selection</option>
+                    <option value="new">New</option>
+                    <option value="current">Current</option>
+                    <option value="final">Final</option>
+                </select>
+                <input type="submit" name="status_button" value="Change Status"> 
+            </div>
             </form>
             <?php if ($position_search): 
                 if (isset($_GET['position_search'])) {
@@ -181,6 +191,16 @@
             <input type="text" name="application_search" id="application_search">
             <input type="submit" value="Search">
             <input type="hidden" name="form_id" value="application_search">
+            <div class="buttons">
+               <input type="submit" name="delete_button" value="Delete Selected">
+                <select name="status" id="select-status">
+                    <option value="">Status change selection</option>
+                    <option value="new">New</option>
+                    <option value="current">Current</option>
+                    <option value="final">Final</option>
+                </select>
+                <input type="submit" name="status_button" value="Change Status"> 
+            </div>
            
             </form>
             
