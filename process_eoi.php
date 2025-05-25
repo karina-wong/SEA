@@ -111,6 +111,7 @@ if (mysqli_stmt_execute($stmt)) {
     $eoi_id = mysqli_insert_id($conn);
     echo "<h2>Application Successful</h2>";
     echo "<p>Your Expression of Interest number is: $eoi_id</p>";
+    echo "<p><a href='apply.php'>Back to Application Page</a></p>";
 } else {
     echo "<p>Error submitting EOI: " . mysqli_error($conn) . "</p>";
 }
