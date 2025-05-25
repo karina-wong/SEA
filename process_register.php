@@ -1,8 +1,5 @@
 <?php
-$host = "localhost";         
-$user = "root";              
-$pwd = "";                   
-$sql_db = "sea_db";
+include_once("settings.php");
 
 if (empty($_POST["name"])) {
     die("Name is required");
