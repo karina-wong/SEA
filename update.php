@@ -96,7 +96,7 @@
                 //used pdo over mysqliquery since the array values made it far more complciated to parse into the command
                 $placeholders = implode(',', array_fill(0, count($ids), '?'));
 
-                $sql = "UPDATE eoi SET ENUM = ? WHERE EOInumber IN ($placeholders)";
+                $sql = "UPDATE eoi SET Status = ? WHERE EOInumber IN ($placeholders)";
                 $change_stmt = $pdo->prepare($sql);
 
                 // Merge values: first is status, rest are IDs
