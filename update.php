@@ -5,7 +5,6 @@
     $invalid_email = false;
     // database connection from ChatGPT
     //Handling deletions on another page makes it more easy to read??
-
     $email = $_SESSION['email']; //so it can be used w/in the $query
     $password = $_SESSION['password']; //so it can be used to validate
 
