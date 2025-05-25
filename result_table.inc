@@ -1,5 +1,5 @@
 <tr>
-    <td>
+    <td class="checkbox_applicants">
         <input type="checkbox" name="delete_ids[]" value="<?= htmlspecialchars($row['EOInumber']) ?>">
     </td>
     <td><?= htmlspecialchars($row['EOInumber']) ?></td>
