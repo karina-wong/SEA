@@ -54,6 +54,8 @@
                 $_SESSION['update'] = "delete";
                 header("Location: update.php");
                 exit();   
+            } else {
+                $is_invalid = true;
             }
             if (isset($_POST['status_button'])){
                 $_SESSION['change_ids'] = $_POST['delete_ids'];
@@ -64,13 +66,45 @@
             }
             
         } 
-        $is_invalid = true;
     }
-    if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'position_search'){
-        $position_search = true;
-    }
-    if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id']) && $_GET['form_id'] === 'application_search'){
-        $application_search = true;
+    if ($_SERVER["REQUEST_METHOD"] === "GET" && isset($_GET['form_id'])){
+        
+        if ($user && $_GET['form_id'] === 'position_search'){
+            $position_search = true;
+            if (isset($_GET['delete_button'])){
+                $_SESSION['delete_ids'] = $_GET['delete_ids'];
+                $_SESSION['update'] = "delete";
+                header("Location: update.php");
+                exit();   
+            }
+            if (isset($_GET['status_button'])){
+                $_SESSION['change_ids'] = $_GET['delete_ids'];
+                $_SESSION['status_selected'] = $_GET["status"];
+                $_SESSION['update'] = "status";
+                header("Location: update.php");
+                exit();  
+            }
+            
+        } 
+        
+        if ($user && $_GET['form_id'] === 'application_search'){
+            $application_search = true;
+            if (isset($_GET['delete_button'])){
+                $_SESSION['delete_ids'] = $_GET['delete_ids'];
+                $_SESSION['update'] = "delete";
+                header("Location: update.php");
+                exit();   
+            } 
+
+            if (isset($_GET['status_button'])){
+                $_SESSION['change_ids'] = $_GET['delete_ids'];
+                $_SESSION['status_selected'] = $_GET["status"];
+                $_SESSION['update'] = "status";
+                header("Location: update.php");
+                exit();  
+            }
+            
+        } 
     }
 ?>
 
@@ -131,16 +165,7 @@
                 </tbody>
             </table>
             <input type="hidden" name="form_id" value="total_delete">
-            <div class="buttons">
-               <input type="submit" name="delete_button" value="Delete Selected">
-                <select name="status" id="select-status">
-                    <option value="">Status change selection</option>
-                    <option value="new">New</option>
-                    <option value="current">Current</option>
-                    <option value="final">Final</option>
-                </select>
-                <input type="submit" name="status_button" value="Change Status"> 
-            </div>
+            <?php include('buttons.inc');?>
             
         </form>
         <?php if ($is_invalid): ?>
@@ -152,16 +177,6 @@
                 <input type="text" name="position_search" id="position_search">
                 <input type="submit" value="Search">
             <input type="hidden" name="form_id" value="position_search">
-            <div class="buttons">
-               <input type="submit" name="delete_button" value="Delete Selected">
-                <select name="status" id="select-status">
-                    <option value="">Status change selection</option>
-                    <option value="new">New</option>
-                    <option value="current">Current</option>
-                    <option value="final">Final</option>
-                </select>
-                <input type="submit" name="status_button" value="Change Status"> 
-            </div>
             </form>
             <?php if ($position_search): 
                 if (isset($_GET['position_search'])) {
@@ -170,6 +185,7 @@
                     $result = mysqli_query($conn, $sql);
                 
                     if (mysqli_num_rows($result) > 0) {
+                        echo "<form>";
                         echo "<table>";
                         include("table_head.inc");
                         echo "<tbody>";
@@ -178,6 +194,10 @@
                         }
                         echo "</tbody>";
                         echo "</table>";
+                        include('buttons.inc');
+                        echo '<input type="hidden" name="form_id" value="position_search">';
+                        echo "</form>";
+
                     } else {
                         echo "<p>🚫 No matching Applicants found.</p>";
                     }
@@ -191,16 +211,6 @@
             <input type="text" name="application_search" id="application_search">
             <input type="submit" value="Search">
             <input type="hidden" name="form_id" value="application_search">
-            <div class="buttons">
-               <input type="submit" name="delete_button" value="Delete Selected">
-                <select name="status" id="select-status">
-                    <option value="">Status change selection</option>
-                    <option value="new">New</option>
-                    <option value="current">Current</option>
-                    <option value="final">Final</option>
-                </select>
-                <input type="submit" name="status_button" value="Change Status"> 
-            </div>
            
             </form>
             
@@ -212,6 +222,7 @@
                     $result = mysqli_query($conn, $sql);
                 
                     if (mysqli_num_rows($result) > 0) {
+                        echo "<form>";
                         echo "<table>";
                         include("table_head.inc");
                         echo "<tbody>";
@@ -220,6 +231,9 @@
                         }
                         echo "</tbody>";
                         echo "</table>";
+                        include('buttons.inc');
+                        echo '<input type="hidden" name="form_id" value="application_search">';
+                        echo "</form>";
                     } else {
                         echo "<p>🚫 No matching Applicants found.</p>";
                     }
