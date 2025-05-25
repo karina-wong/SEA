@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2025 at 01:03 PM
+-- Generation Time: May 25, 2025 at 02:36 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,11 +28,17 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `manager` (
-  `id` int(11) NOT NULL,
   `name` varchar(128) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password_hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `manager`
+--
+
+INSERT INTO `manager` (`name`, `email`, `password_hash`) VALUES
+('admin', 'admin@gmail.com', '$2y$10$ZcmkBjpOkS9YvBbphp1h5e3MXbYg0XfjvD9350TmmBQHDoCtSj8ZW');
 
 --
 -- Indexes for dumped tables
@@ -42,18 +48,8 @@ CREATE TABLE `manager` (
 -- Indexes for table `manager`
 --
 ALTER TABLE `manager`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`name`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `manager`
---
-ALTER TABLE `manager`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
