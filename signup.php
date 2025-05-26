@@ -29,7 +29,7 @@
         </div>
         <div>
             <label for="password">Password</label>
-            <input for="password" id="password" name="password">
+            <input type="password" id="password" name="password">
         </div>
         <div>
             <label for="password_confirmation">Repeat Password</label>
