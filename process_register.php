@@ -45,6 +45,7 @@ $stmt->bind_param("sss",
 
 if ($stmt->execute()) {
     echo "Registration Successful";
+    echo "<p><a href='index.php'>Back to Home Page</a></p>";
 } else {
 
     if ($mysqli->errno === 1062) {

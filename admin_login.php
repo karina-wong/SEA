@@ -10,20 +10,18 @@ include_once "nav.inc";
 $is_invalid = false;
 
 $conn = mysqli_connect($host, $user, $pwd, $sql_db);
-// Get user input
-$email = trim($_POST['email']);
-$password = trim($_POST['password']);
 
 
-// Simple query to check credentials, gets all info based on email
-$query = "SELECT * FROM manager WHERE email = '$email'";
-$result = mysqli_query($conn, $query);
-$user = mysqli_fetch_assoc($result);
 
 //Checks if it is posted first
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = trim($_POST['email']);
     $password = trim($_POST['password']);
+
+    // Simple query to check credentials, gets all info based on email
+    $query = "SELECT * FROM manager WHERE email = '$email'";
+    $result = mysqli_query($conn, $query);
+    $user = mysqli_fetch_assoc($result);
 
     if ($email && $password) {
         $stmt = $conn->prepare("SELECT * FROM manager WHERE email = ?");
