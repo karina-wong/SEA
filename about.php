@@ -29,6 +29,8 @@
             <dd>
               <ul>
                 <li>Chief Communicator</li>
+                <li>Created apply page and eoi processing</li>
+                <li>Created manage existing job listing section in manage page</li>
               </ul>
             </dd>
 
@@ -36,12 +38,15 @@
             <dd>
               <ul>
                 <li>Main Architect</li>
+                <li>Updated jobs page to grab job data from database</li>
+                <li>Created manager signup page</li>
               </ul>
             </dd>
             <dt>Karina</dt>
             <dd>
               <ul>
                 <li>Team Leader</li>
+                <li>Created manage page along with all functionality required including listing EOIs, searching with name and position,deletion and status changes</li>
               </ul>
             </dd>
           </dl>
