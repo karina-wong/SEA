@@ -4,7 +4,6 @@
 session_start();
 require_once("settings.php");
 $page = "adminloginPage";
-include_once "nav.inc";
 
 
 $is_invalid = false;
@@ -53,6 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
 </head>
 <body>
+    <?php include_once "nav.inc";?>
     <h1>Admin Login Page</h1>
     <h4>Admins only</h4>
     <?php if ($is_invalid): ?>
